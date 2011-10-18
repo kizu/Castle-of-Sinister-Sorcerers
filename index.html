@@ -89,6 +89,7 @@ BODY {
 	     -o-transition: opacity .5s, visibility .5s;
 	        transition: opacity .5s, visibility .5s;
 	}
+
 	.b-scene_debug,
 	.b-scene:target,
 	#okResolution:checked ~ .b-display .b-scene_setup_resolution,
@@ -168,6 +169,23 @@ BODY {
 	width: 100%;
 	height: 100%;
 	}
+.b-continue {
+	position: absolute;
+	z-index: 9999;
+	left: 9999px;
+
+	width: 100%;
+	height: 100%;
+
+	text-align: right;
+
+	font-size: 5em;
+	line-height: 6em;
+	text-decoration: none;
+
+	color: #FFF;
+	}
+
 	#Start .b-frame_bg {
 		background: inherit;
 		-webkit-transition: background 7s;
@@ -292,9 +310,16 @@ BODY {
 	#Start:target .b-logo__i3 {
 		width: 4em;
 		}
-
+	#Start:target .b-continue {
+		left: 0 !important;
+		-webkit-transition: left 9s ease;
+		   -moz-transition: left 9s ease;
+		     -o-transition: left 9s ease;
+		        transition: left 9s ease;
+		
+		}
 		</style>
-		<div class="b-scene b-scene_debug" id="Start">
+		<div class="b-scene" id="Start">
 			<div class="b-frame b-frame_bg"></div>
 			<div class="b-frame b-frame_flash"></div>
 			<div class="b-frame b-frame_flash b-frame_flash_dark"></div>
@@ -303,12 +328,130 @@ BODY {
 			<div class="b-frame b-frame_flash b-frame_flash3"></div>
 			<div class="b-frame b-frame_bg2"></div>
 			<div class="b-castle">
-				<!-- There would be the code for a castle -->
+				[castle]<!-- There would be the code for a castle -->
 			</div>
 			<h1 class="b-logo">
 				C<span class="b-logo__i b-logo__i1">astle of </span>S<span class="b-logo__i b-logo__i2">inister </span>S<span class="b-logo__i b-logo__i3">orcerers</span>
 			</h1>
+			<a href="#Entrance" class="b-continue">→</a>
 		</div>
+
+		<style>
+#Entrance {
+	background: #000;
+	-webkit-transition: opacity 2s, visibility 2s, background 4s;
+	   -moz-transition: opacity 2s, visibility 2s, background 4s;
+	     -o-transition: opacity 2s, visibility 2s, background 4s;
+	        transition: opacity 2s, visibility 2s, background 4s;
+	}
+	#Entrance .b-ground {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 5em;
+		background: #999;
+		border-top: .5em dotted #777;
+		}
+	#Entrance .b-ground:before {
+		content: "";
+		
+		position: absolute;
+		bottom: 0;
+		left: 40%;
+		width: 20%;
+		height: 3em;
+		background: #400;
+		border-top: .5em solid brown;
+		border-bottom: 2em solid blue;
+		}
+	#Entrance .b-wall {
+		position: absolute;
+		right: 0;
+		bottom: 11em;
+		width: 14.5em;
+		height: 5em;
+		background: #999;
+		border-left: 1.5em double #777;
+		}
+	#Entrance .b-wall:before {
+		content: "";
+		position: absolute;
+		left: -1.5em;
+		top: -1em;
+		width: 16.5em;
+		border-top: 1.5em dotted #777;
+		}
+	#Entrance .b-party {
+		content: "";
+		position: absolute;
+		left: -20em;
+		bottom: 5.45em;
+
+		width: 7em;
+		height: 4em;
+		background: #FFF;
+		
+		-webkit-transition: left 9s linear;
+		   -moz-transition: left 9s linear;
+		     -o-transition: left 9s linear;
+		        transition: left 9s linear;
+		}
+	#Entrance .b-clouds {
+		position: absolute;
+		right: 2em;
+		top: 2.45em;
+
+		width: 9em;
+		height: 4em;
+		background: #555;
+		
+		-webkit-transition: right 120s linear;
+		   -moz-transition: right 120s linear;
+		     -o-transition: right 120s linear;
+		        transition: right 120s linear;
+		}
+	#Entrance .b-clouds:before {
+		content: "";
+		position: absolute;
+		right: -.5em;
+		bottom: .5em;
+		left: -.5em;
+		top: .5em;
+
+		background: inherit;
+		}
+	
+#Entrance:target {
+	background: #400;
+	}
+	#Entrance:target .b-party {
+		left: 40em;
+		bottom: 5.45em;
+
+		width: 7em;
+		height: 4em;
+		background: #FFF;
+		}
+	#Entrance:target .b-clouds {
+		right: 60em;
+		}
+	
+	
+	
+		</style>
+		<div class="b-scene" id="Entrance">
+			<div class="b-ground"></div>
+			<div class="b-clouds">
+				<!-- Clouds with animation -->
+			</div>
+			<div class="b-wall"></div>
+			<div class="b-party">
+				[party]<!-- There would be the code for a party -->
+			</div>
+			<a href="#" class="b-continue"></a>
+		</div>
+
 		<a class="b-choose-me b-choose-me_start" href="#Setup">Start</a>
 	</div>
 	
