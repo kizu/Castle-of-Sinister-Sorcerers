@@ -148,6 +148,10 @@ BODY {
 	</style>
 </head>
 <body>
+	<p style="position:absolute;">
+		<a href="#Entrance">Entrance</a>
+		<a href="#Entrance2">Entrance2</a>
+	</p>
 	<!-- It's dangerous to go alone, take this comment for the start! -->
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionSmall" />
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionMedium" checked="checked" />
@@ -344,74 +348,120 @@ BODY {
 	     -o-transition: opacity 2s, visibility 2s, background 4s;
 	        transition: opacity 2s, visibility 2s, background 4s;
 	}
-	#Entrance .b-ground {
+	.b-scene_entrance .b-ground {
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		height: 5em;
-		background: #999;
-		border-top: .5em dotted #777;
+		background: #333;
+		border-top: .5em dotted #444;
 		}
-	#Entrance .b-ground:before {
+	.b-scene_entrance .b-ground:before {
 		content: "";
 		
 		position: absolute;
 		bottom: 0;
 		left: 40%;
 		width: 20%;
-		height: 3em;
-		background: #400;
-		border-top: .5em solid brown;
-		border-bottom: 2em solid blue;
+		height: 3.5em;
+		background: #30320B;
+		border-bottom: 2em solid #36566F;
 		}
-	#Entrance .b-wall {
+		.b-scene_entrance .b-ground__moat {
+			position: absolute;
+			top: -.5em;
+			left: 40%;
+			width: 9em;
+			height: .5em;
+			margin-left: -.3em;
+			background: #6D3E22;
+			border-right: .5em solid #131309;
+			-webkit-border-radius: 0 .25em .25em 0;
+			   -moz-border-radius: 0 .25em .25em 0;
+			        border-radius: 0 .25em .25em 0;
+			-webkit-transition: -webkit-transform .4s, margin .4s;
+			   -moz-transition:    -moz-transform .4s, margin .4s;
+			     -o-transition:      -o-transform .4s, margin .4s;
+			        transition:         transform .4s, margin .4s;
+			
+			-webkit-transform: rotate(90deg);
+			   -moz-transform: rotate(90deg);
+			     -o-transform: rotate(90deg);
+			        transform: rotate(90deg);
+			-webkit-transform-origin: 100% 0;
+			}
+		
+	.b-scene_entrance .b-wall {
 		position: absolute;
 		right: 0;
 		bottom: 11em;
 		width: 14.5em;
 		height: 5em;
-		background: #999;
-		border-left: 1.5em double #777;
+		background: #666;
+		border-top: .5em solid #777;
+		border-left: .5em solid #777;
 		}
-	#Entrance .b-wall:before {
+	.b-scene_entrance .b-wall:before {
 		content: "";
 		position: absolute;
-		left: -1.5em;
+		left: -.5em;
 		top: -1em;
-		width: 16.5em;
-		border-top: 1.5em dotted #777;
+		width: 14.7em;
+		border-top: 1em dotted #777;
 		}
-	#Entrance .b-party {
+	.b-scene_entrance .b-wall:after {
 		content: "";
 		position: absolute;
-		left: -20em;
+		left: -.5em;
+		top: 5em;
+		width: 14.5em;
+		height: 5.5em;
+		border-left: .5em solid #555;
+		background: #444;
+		}
+		.b-scene_entrance .b-wall__windows {
+			position: absolute;
+			top: 6.5em;
+			left: 4em;
+			z-index: 9;
+			border: solid #475383;
+			border-width: 0 1.5em;
+			width: 6em;
+			height: 1.5em;
+			}
+		
+	.b-scene_entrance .b-party {
+		content: "";
+		position: absolute;
+		z-index: 10;
+		left: -7em;
 		bottom: 5.45em;
 
 		width: 7em;
 		height: 4em;
 		background: #FFF;
 		
-		-webkit-transition: left 9s linear;
-		   -moz-transition: left 9s linear;
-		     -o-transition: left 9s linear;
-		        transition: left 9s linear;
+		-webkit-transition: left 4s 1s linear;
+		   -moz-transition: left 4s 1s linear;
+		     -o-transition: left 4s 1s linear;
+		        transition: left 4s 1s linear;
 		}
-	#Entrance .b-clouds {
+	.b-scene_entrance .b-clouds {
 		position: absolute;
 		right: 2em;
-		top: 2.45em;
+		top: 12.45em;
 
 		width: 9em;
 		height: 4em;
-		background: #555;
+		background: #978DAF;
 		
 		-webkit-transition: right 120s linear;
 		   -moz-transition: right 120s linear;
 		     -o-transition: right 120s linear;
 		        transition: right 120s linear;
 		}
-	#Entrance .b-clouds:before {
+	.b-scene_entrance .b-clouds:before {
 		content: "";
 		position: absolute;
 		right: -.5em;
@@ -421,43 +471,79 @@ BODY {
 
 		background: inherit;
 		}
-	
-#Entrance:target {
-	background: #400;
-	}
-	#Entrance:target .b-party {
-		left: 40em;
-		bottom: 5.45em;
-
-		width: 7em;
-		height: 4em;
-		background: #FFF;
+	.b-scene_entrance .b-frame_mountains {
+		background: #8A86A9 repeat-x;
+		background-position:
+		  1em -4em, 1em -4em,
+		  6em -5em, 6em -5em,
+		  6em -5em, 6em -5em,
+		  3em -5em, 3em -5em,
+		  21em -5em, 21em -5em;
+		background-size:
+		  3em 30em, 3em 30em,
+		  5em 30em, 5em 30em,
+		  15em 30em, 15em 30em,
+		  25em 30em, 25em 30em,
+		  70em 30em, 70em 30em;
+		background-image: 
+		-webkit-linear-gradient( 85deg, #30320B 35px, transparent 0),
+		-webkit-linear-gradient(95deg, #30320B 35px, transparent 0),
+		-webkit-linear-gradient( 83deg, #272914 40px, transparent 0),
+		-webkit-linear-gradient(97deg, #272914 40px, transparent 0),
+		-webkit-linear-gradient( 65deg, #37456C 90px, transparent 0),
+		-webkit-linear-gradient(115deg, #37456C 90px, transparent 0),
+		-webkit-linear-gradient( 60deg, #475383 120px, transparent 0),
+		-webkit-linear-gradient(120deg, #475383 120px, transparent 0),
+		-webkit-linear-gradient( 55deg, #72769B 200px, transparent 0),
+		-webkit-linear-gradient(125deg, #72769B 200px, transparent 0);
 		}
-	#Entrance:target .b-clouds {
+	
+.b-scene_entrance:target {
+	background: #30320B;
+	}
+	.b-scene_entrance:target .b-clouds {
 		right: 60em;
 		}
-	#Entrance:target .b-continue {
-		left: 0 !important;
-		-webkit-transition: left 11s ease;
-		   -moz-transition: left 11s ease;
-		     -o-transition: left 11s ease;
-		        transition: left 11s ease;
-
-		}
-	
-	
+		#Entrance:target .b-party {
+			left: 9em;
+			}
+		#Entrance2:target .b-party {
+			left: 40em;
+			}
+		#Entrance2:target .b-ground__moat {
+			-webkit-transform: rotate(0) translate(0, 0);
+			   -moz-transform: rotate(0) translate(0, 0);
+			     -o-transform: rotate(0) translate(0, 0);
+			        transform: rotate(0) translate(0, 0);
+			margin-top: -.5em;
+			
+			}
+		#Entrance2:target .b-continue {
+			left: 0 !important;
+			-webkit-transition: left 6s ease;
+			   -moz-transition: left 6s ease;
+			     -o-transition: left 6s ease;
+			        transition: left 6s ease;
+			}
 	
 		</style>
-		<div class="b-scene" id="Entrance">
-			<div class="b-ground"></div>
-			<div class="b-clouds">
-				<!-- Clouds with animation -->
+		<div class="b-scene b-scene_entrance b-scene_debug" id="Entrance">
+			<div class="b-scene_entrance" id="Entrance2">
+				<div class="b-frame b-frame_mountains"></div>
+				<div class="b-ground">
+					<div class="b-ground__moat"></div>
+				</div>
+				<div class="b-clouds">
+					<!-- Clouds with animation -->
+				</div>
+				<div class="b-wall">
+					<div class="b-wall__windows"></div>
+				</div>
+				<div class="b-party">
+					[party]<!-- There would be the code for a party -->
+				</div>
+				<a href="#" class="b-continue">→</a>
 			</div>
-			<div class="b-wall"></div>
-			<div class="b-party">
-				[party]<!-- There would be the code for a party -->
-			</div>
-			<a href="#" class="b-continue">→</a>
 		</div>
 
 		<a class="b-choose-me b-choose-me_start" href="#Setup">Start</a>
