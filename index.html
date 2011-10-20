@@ -92,6 +92,7 @@ BODY {
 
 	.b-scene_debug,
 	.b-scene:target,
+	.b-scene_extra:target+.b-scene,
 	#okResolution:checked ~ .b-display .b-scene_setup_resolution,
 	#okResolution:not(:checked) ~ .b-display .b-scene_setup_sound {
 		opacity: 1;
@@ -127,11 +128,12 @@ BODY {
 		color: #000;
 		background: #FFF;
 		}
+	.b-scene_extra,
 	.b-choose-me__control {
-		position: absolute;
-		position: fixed;
-		visibility: hidden;
-		left: -100px;
+		position: absolute !important;
+		position: fixed !important;
+		visibility: hidden !important;
+		left: -100px !important;
 		}
 	.b-choose-me_start {
 		position: relative;
@@ -349,7 +351,7 @@ BODY {
 	     -o-transition: opacity 2s, visibility 2s, background 4s;
 	        transition: opacity 2s, visibility 2s, background 4s;
 	}
-	.b-scene_entrance .b-ground {
+	#Entrance .b-ground {
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -358,7 +360,7 @@ BODY {
 		background: #333;
 		border-top: .5em dotted #444;
 		}
-	.b-scene_entrance .b-ground:before {
+	#Entrance .b-ground:before {
 		content: "";
 		
 		position: absolute;
@@ -369,7 +371,7 @@ BODY {
 		background: #30320B;
 		border-bottom: 2em solid #36566F;
 		}
-		.b-scene_entrance .b-ground__moat {
+		#Entrance .b-ground__moat {
 			position: absolute;
 			top: -.5em;
 			left: 40%;
@@ -396,7 +398,7 @@ BODY {
 			        transform-origin: 100% 0;
 			}
 		
-	.b-scene_entrance .b-wall {
+	#Entrance .b-wall {
 		position: absolute;
 		right: 0;
 		bottom: 11em;
@@ -406,7 +408,7 @@ BODY {
 		border-top: .5em solid #777;
 		border-left: .5em solid #777;
 		}
-	.b-scene_entrance .b-wall:before {
+	#Entrance .b-wall:before {
 		content: "";
 		position: absolute;
 		left: -.5em;
@@ -414,7 +416,7 @@ BODY {
 		width: 14.7em;
 		border-top: 1em dotted #777;
 		}
-	.b-scene_entrance .b-wall:after {
+	#Entrance .b-wall:after {
 		content: "";
 		position: absolute;
 		left: -.5em;
@@ -424,7 +426,7 @@ BODY {
 		border-left: .5em solid #555;
 		background: #444;
 		}
-		.b-scene_entrance .b-wall__windows {
+		#Entrance .b-wall__windows {
 			position: absolute;
 			top: 6.5em;
 			left: 4em;
@@ -435,7 +437,7 @@ BODY {
 			height: 1.5em;
 			}
 		
-	.b-scene_entrance .b-party {
+	#Entrance .b-party {
 		content: "";
 		position: absolute;
 		z-index: 10;
@@ -450,7 +452,7 @@ BODY {
 		     -o-transition: left 4s 1s linear;
 		        transition: left 4s 1s linear;
 		}
-	.b-scene_entrance .b-clouds {
+	#Entrance .b-clouds {
 		position: absolute;
 		right: 2em;
 		top: 12.45em;
@@ -464,7 +466,7 @@ BODY {
 		     -o-transition: right 120s linear;
 		        transition: right 120s linear;
 		}
-	.b-scene_entrance .b-clouds:before {
+	#Entrance .b-clouds:before {
 		content: "";
 		position: absolute;
 		right: -.5em;
@@ -474,7 +476,7 @@ BODY {
 
 		background: inherit;
 		}
-	.b-scene_entrance .b-frame_mountains {
+	#Entrance .b-frame_mountains {
 		background: #8A86A9 repeat-x;
 		background-position:
 		  1em -4em, 1em -4em,
@@ -642,6 +644,10 @@ BODY {
 				}
 			.b-human_firefox .b-human__cape {
 				background: #D30000;
+				-webkit-transition: -webkit-transform 1s 9s;
+				   -moz-transition:    -moz-transform 1s 9s;
+				     -o-transition:      -o-transform 1s 9s;
+				        transition:         transform 1s 9s;
 				}
 			.b-human_firefox .b-human__hand {
 				background: #F45900;
@@ -716,10 +722,12 @@ BODY {
 			top: -11.5em;
 			}
 		
-.b-scene_entrance:target {
+#Entrance:target,
+#Entrance2:target+#Entrance {
 	background: #30320B;
 	}
-	.b-scene_entrance:target .b-clouds {
+	#Entrance .b-clouds,
+	#Entrance2:target+#Entrance .b-clouds {
 		right: 60em;
 		}
 		#Entrance:target .b-party {
@@ -735,6 +743,19 @@ BODY {
 			     -o-transform: rotate(125deg);
 			        transform: rotate(125deg);
 			}
+		#Entrance:target .b-human_firefox .b-human__cape {
+			-webkit-transform: rotate(-10deg);
+			   -moz-transform: rotate(-10deg);
+			     -o-transform: rotate(-10deg);
+			        transform: rotate(-10deg);
+			}
+		#Entrance2:target+#Entrance .b-human_firefox .b-human__hand {
+			left: 0;
+			-webkit-transform: rotate(10deg);
+			   -moz-transform: rotate(10deg);
+			     -o-transform: rotate(10deg);
+			        transform: rotate(10deg);
+			}
 		#Entrance:target .b-bubble:nth-of-type(1) { top: 2em; }
 		#Entrance:target .b-bubble:nth-of-type(2) { top: 2em; }
 		#Entrance:target .b-bubble:nth-of-type(3) { top: 5em; }
@@ -742,28 +763,28 @@ BODY {
 		#Entrance:target .b-bubble:nth-of-type(5) { top: 12.5em; }
 		#Entrance:target .b-bubble:nth-of-type(6) { top: 12.5em; }
 
-		#Entrance2:target .b-bubble {
+		#Entrance2:target+#Entrance .b-bubble {
 			-webkit-transition: top 2s;
 			   -moz-transition: top 2s;
 			     -o-transition: top 2s;
 			        transition: top 2s;
 			}
 
-		#Entrance2:target .b-bubble:nth-of-type(1) { top: 200em; }
-		#Entrance2:target .b-bubble:nth-of-type(2) { top: 200em; }
-		#Entrance2:target .b-bubble:nth-of-type(3) { top: 200em; }
-		#Entrance2:target .b-bubble:nth-of-type(4) { top: 200em; }
-		#Entrance2:target .b-bubble:nth-of-type(5) { top: 200em; }
-		#Entrance2:target .b-bubble:nth-of-type(6) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(1) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(2) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(3) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(4) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(5) { top: 200em; }
+		#Entrance2:target+#Entrance .b-bubble:nth-of-type(6) { top: 200em; }
 
-		#Entrance2:target {
+		#Entrance2:target+#Entrance {
 			visibility: visible;
 			}
 		
-		#Entrance2:target .b-party {
+		#Entrance2:target+#Entrance .b-party {
 			left: 45em;
 			}
-		#Entrance2:target .b-ground__moat {
+		#Entrance2:target+#Entrance .b-ground__moat {
 			-webkit-transform: rotate(0) translate(0, 0);
 			   -moz-transform: rotate(0) translate(0, 0);
 			     -o-transform: rotate(0) translate(0, 0);
@@ -778,7 +799,7 @@ BODY {
 			     -o-transition: left 24s ease;
 			        transition: left 24s ease;
 			}
-		#Entrance2:target .b-continue2 {
+		#Entrance2:target+#Entrance .b-continue2 {
 			left: 0 !important;
 			-webkit-transition: left 6s ease;
 			   -moz-transition: left 6s ease;
@@ -787,52 +808,51 @@ BODY {
 			}
 	
 		</style>
-		<div class="b-scene b-scene_entrance" id="Entrance">
-			<div class="b-scene_entrance" id="Entrance2">
-				<div class="b-frame b-frame_mountains"></div>
-				<div class="b-ground">
-					<div class="b-ground__moat"></div>
-				</div>
-				<div class="b-clouds">
-					<!-- Clouds with animation -->
-				</div>
-				<div class="b-human b-human_sorcerer b-human_firefox">
+		<div class="b-scene b-scene_extra" id="Entrance2"></div>
+		<div class="b-scene" id="Entrance">
+			<div class="b-frame b-frame_mountains"></div>
+			<div class="b-ground">
+				<div class="b-ground__moat"></div>
+			</div>
+			<div class="b-clouds">
+				<!-- Clouds with animation -->
+			</div>
+			<div class="b-human b-human_sorcerer b-human_firefox">
+				<div class="b-human__cape"></div>
+				<div class="b-human__hand"></div>
+			</div>
+			<div class="b-wall">
+				<div class="b-wall__windows"></div>
+			</div>
+			
+			<div class="b-party">
+				<div class="b-human">
 					<div class="b-human__cape"></div>
 					<div class="b-human__hand"></div>
 				</div>
-				<div class="b-wall">
-					<div class="b-wall__windows"></div>
-				</div>
-				
-				<div class="b-party">
-					<div class="b-human">
-						<div class="b-human__cape"></div>
-						<div class="b-human__hand"></div>
-					</div>
-				</div>
-
-				<dialog>
-				  <dt class="b-bubble__person">Firefox</dt>
-				  <dd class="b-bubble b-bubble_sorcerer">You shall not pass!</dd>
-
-				  <dt class="b-bubble__person">Hero</dt>
-				  <dd class="b-bubble b-bubble_hero">…</dd>
-				  <dd class="b-bubble b-bubble_hero">Why? I'm not afraid of you, Firefox.</dd>
-
-				  <dt class="b-bubble__person">Firefox</dt>
-				  <dd class="b-bubble b-bubble_sorcerer">But I have an extension magic! I'll overload your brain with dirty memories and you'll never remember why you're here!</dd>
-
-				  <dt class="b-bubble__person">Hero</dt>
-				  <dd class="b-bubble b-bubble_hero">Haha! I have a helm of memory, it gives me 8gb protection from your brain-burning fire magic!</dd>
-
-				  <dt class="b-bubble__person">Firefox</dt>
-				  <dd class="b-bubble b-bubble_sorcerer">So sad :( Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</dd>
-				</dialog>
-
-
-				<a href="#Entrance2" class="b-continue b-continue1">→</a>
-				<a href="#" class="b-continue b-continue2">→</a>
 			</div>
+
+			<dialog>
+			  <dt class="b-bubble__person">Firefox</dt>
+			  <dd class="b-bubble b-bubble_sorcerer">You shall not pass!</dd>
+
+			  <dt class="b-bubble__person">Hero</dt>
+			  <dd class="b-bubble b-bubble_hero">…</dd>
+			  <dd class="b-bubble b-bubble_hero">Why? I'm not afraid of you, Firefox.</dd>
+
+			  <dt class="b-bubble__person">Firefox</dt>
+			  <dd class="b-bubble b-bubble_sorcerer">But I have an extension magic! I'll overload your brain with dirty memories and you'll never remember why you're here!</dd>
+
+			  <dt class="b-bubble__person">Hero</dt>
+			  <dd class="b-bubble b-bubble_hero">Haha! I have a helm of memory, it gives me 8gb protection from your brain-burning fire magic!</dd>
+
+			  <dt class="b-bubble__person">Firefox</dt>
+			  <dd class="b-bubble b-bubble_sorcerer">So sad :( Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</dd>
+			</dialog>
+
+
+			<a href="#Entrance2" class="b-continue b-continue1">→</a>
+			<a href="#" class="b-continue b-continue2">→</a>
 		</div>
 
 		<a class="b-choose-me b-choose-me_start" href="#Setup">Start</a>
