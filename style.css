@@ -1,3 +1,5 @@
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
 HTML,
 BODY {
 	height: 100%;
@@ -80,6 +82,8 @@ BODY {
 	   -moz-transition: opacity .5s, visibility .5s;
 	     -o-transition: opacity .5s, visibility .5s;
 	        transition: opacity .5s, visibility .5s;
+
+	-webkit-animation: bugfix infinite 1s;
 	}
 
 	.b-scene_debug,

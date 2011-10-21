@@ -382,37 +382,42 @@
 				        transition: opacity .3s 5.7s,         box-shadow .3s 6.3s;
 				}
 			#Hall .b-bubble {
-				margin-top: -20em;
+				top: -20em;
 				}
-			#Hall .b-bubble:nth-of-type(1) {
-				-webkit-transition: margin 1s 7s;
-				   -moz-transition: margin 1s 7s;
-				     -o-transition: margin 1s 7s;
-				        transition: margin 1s 7s;
+			#Hall:target .b-bubble:nth-of-type(1) {
+				top: 2em;
+				-webkit-transition: top 1s 7s;
+				   -moz-transition: top 1s 7s;
+				     -o-transition: top 1s 7s;
+				        transition: top 1s 7s;
 				}
-			#Hall .b-bubble:nth-of-type(2) {
-				-webkit-transition: margin 1s 9s;
-				   -moz-transition: margin 1s 9s;
-				     -o-transition: margin 1s 9s;
-				        transition: margin 1s 9s;
+			#Hall:target .b-bubble:nth-of-type(2) {
+				top: 4em;
+				-webkit-transition: top 1s 9s;
+				   -moz-transition: top 1s 9s;
+				     -o-transition: top 1s 9s;
+				        transition: top 1s 9s;
 				}
-			#Hall .b-bubble:nth-of-type(3) {
-				-webkit-transition: margin 1s 10s;
-				   -moz-transition: margin 1s 10s;
-				     -o-transition: margin 1s 10s;
-				        transition: margin 1s 10s;
+			#Hall:target .b-bubble:nth-of-type(3) {
+				top: 4.5em;
+				-webkit-transition: top 1s 10s;
+				   -moz-transition: top 1s 10s;
+				     -o-transition: top 1s 10s;
+				        transition: top 1s 10s;
 				}
-			#Hall .b-bubble:nth-of-type(4) {
-				-webkit-transition: margin 1s 13s;
-				   -moz-transition: margin 1s 13s;
-				     -o-transition: margin 1s 13s;
-				        transition: margin 1s 13s;
+			#Hall:target .b-bubble:nth-of-type(4) {
+				top: 8em;
+				-webkit-transition: top 1s 13s;
+				   -moz-transition: top 1s 13s;
+				     -o-transition: top 1s 13s;
+				        transition: top 1s 13s;
 				}
-			#Hall .b-bubble:nth-of-type(5) {
-				-webkit-transition: margin 1s 16s;
-				   -moz-transition: margin 1s 16s;
-				     -o-transition: margin 1s 16s;
-				        transition: margin 1s 16s;
+			#Hall:target .b-bubble:nth-of-type(5) {
+				top: 8em;
+				-webkit-transition: top 1s 16s;
+				   -moz-transition: top 1s 16s;
+				     -o-transition: top 1s 16s;
+				        transition: top 1s 16s;
 				}
 			
 		#Hall:target .b-portal {
@@ -485,10 +490,6 @@
 			        box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
 			}
 		
-		#Hall:target .b-bubble {
-			margin-top: 0 !important;
-			}
-		
 		#Hall:target .b-continue1 {
 			left: 0 !important;
 			-webkit-transition: left 20s;
@@ -551,19 +552,19 @@
 
 			<dialog>
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer" style="top:2em">Huh? Why didn't our webkit magic work?</dd>
+			  <dd class="b-bubble b-bubble_sorcerer">Huh? Why didn't our webkit magic work?</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero" style="top:4em">Safari and Chrome, you thought that your strange bugs would skrew me?</dd>
+			  <dd class="b-bubble b-bubble_hero">Safari and Chrome, you thought that your strange bugs would skrew me?</dd>
 
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer" style="top:4.5em">Yeah, but…</dd>
+			  <dd class="b-bubble b-bubble_sorcerer">Yeah, but…</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero" style="top:8em">I have a chainmail of a TranslateZ! I've got it from the Caves of -webkit-transform, it's a great protection against your filty bug attacks!</dd>
+			  <dd class="b-bubble b-bubble_hero">I have a chainmail of a TranslateZ! I've got it from the Caves of -webkit-transform, it's a great protection against your filty bug attacks!</dd>
 
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer" style="top:8em">Well, go for now, but our 3D transforms would get you sooner or later!</dd>
+			  <dd class="b-bubble b-bubble_sorcerer">Well, go for now, but our 3D transforms would get you sooner or later!</dd>
 
 			</dialog>
 
