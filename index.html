@@ -437,16 +437,13 @@ BODY {
 			height: 1.5em;
 			}
 		
-	#Entrance .b-party {
+	#Entrance .b-human_hero {
 		content: "";
 		position: absolute;
 		z-index: 10;
 		left: -7em;
 		bottom: 5.45em;
 
-		width: 7em;
-		height: 4em;
-		
 		-webkit-transition: left 4s 1s linear;
 		   -moz-transition: left 4s 1s linear;
 		     -o-transition: left 4s 1s linear;
@@ -491,16 +488,49 @@ BODY {
 		  25em 30em, 25em 30em,
 		  70em 30em, 70em 30em;
 		background-image: 
-		-webkit-linear-gradient( 85deg, #30320B 35px, transparent 0),
-		-webkit-linear-gradient(95deg, #30320B 35px, transparent 0),
-		-webkit-linear-gradient( 83deg, #272914 40px, transparent 0),
-		-webkit-linear-gradient(97deg, #272914 40px, transparent 0),
-		-webkit-linear-gradient( 65deg, #37456C 90px, transparent 0),
-		-webkit-linear-gradient(115deg, #37456C 90px, transparent 0),
-		-webkit-linear-gradient( 60deg, #475383 120px, transparent 0),
-		-webkit-linear-gradient(120deg, #475383 120px, transparent 0),
-		-webkit-linear-gradient( 55deg, #72769B 200px, transparent 0),
-		-webkit-linear-gradient(125deg, #72769B 200px, transparent 0);
+		  -webkit-linear-gradient( 85deg, #30320B  35px, transparent 0),
+		  -webkit-linear-gradient( 95deg, #30320B  35px, transparent 0),
+		  -webkit-linear-gradient( 83deg, #272914  40px, transparent 0),
+		  -webkit-linear-gradient( 97deg, #272914  40px, transparent 0),
+		  -webkit-linear-gradient( 65deg, #37456C  90px, transparent 0),
+		  -webkit-linear-gradient(115deg, #37456C  90px, transparent 0),
+		  -webkit-linear-gradient( 60deg, #475383 120px, transparent 0),
+		  -webkit-linear-gradient(120deg, #475383 120px, transparent 0),
+		  -webkit-linear-gradient( 55deg, #72769B 200px, transparent 0),
+		  -webkit-linear-gradient(125deg, #72769B 200px, transparent 0);
+		background-image: 
+		     -moz-linear-gradient( 85deg, #30320B  35px, transparent 0),
+		     -moz-linear-gradient( 95deg, #30320B  35px, transparent 0),
+		     -moz-linear-gradient( 83deg, #272914  40px, transparent 0),
+		     -moz-linear-gradient( 97deg, #272914  40px, transparent 0),
+		     -moz-linear-gradient( 65deg, #37456C  90px, transparent 0),
+		     -moz-linear-gradient(115deg, #37456C  90px, transparent 0),
+		     -moz-linear-gradient( 60deg, #475383 120px, transparent 0),
+		     -moz-linear-gradient(120deg, #475383 120px, transparent 0),
+		     -moz-linear-gradient( 55deg, #72769B 200px, transparent 0),
+		     -moz-linear-gradient(125deg, #72769B 200px, transparent 0);
+		background-image: 
+		       -o-linear-gradient( 85deg, #30320B  35px, transparent 0),
+		       -o-linear-gradient( 95deg, #30320B  35px, transparent 0),
+		       -o-linear-gradient( 83deg, #272914  40px, transparent 0),
+		       -o-linear-gradient( 97deg, #272914  40px, transparent 0),
+		       -o-linear-gradient( 65deg, #37456C  90px, transparent 0),
+		       -o-linear-gradient(115deg, #37456C  90px, transparent 0),
+		       -o-linear-gradient( 60deg, #475383 120px, transparent 0),
+		       -o-linear-gradient(120deg, #475383 120px, transparent 0),
+		       -o-linear-gradient( 55deg, #72769B 200px, transparent 0),
+		       -o-linear-gradient(125deg, #72769B 200px, transparent 0);
+		background-image: 
+		          linear-gradient( 85deg, #30320B  35px, transparent 0),
+		          linear-gradient( 95deg, #30320B  35px, transparent 0),
+		          linear-gradient( 83deg, #272914  40px, transparent 0),
+		          linear-gradient( 97deg, #272914  40px, transparent 0),
+		          linear-gradient( 65deg, #37456C  90px, transparent 0),
+		          linear-gradient(115deg, #37456C  90px, transparent 0),
+		          linear-gradient( 60deg, #475383 120px, transparent 0),
+		          linear-gradient(120deg, #475383 120px, transparent 0),
+		          linear-gradient( 55deg, #72769B 200px, transparent 0),
+		          linear-gradient(125deg, #72769B 200px, transparent 0);
 		}
 	.b-human {
 		position: absolute;
@@ -730,7 +760,7 @@ BODY {
 	#Entrance2:target+#Entrance .b-clouds {
 		right: 60em;
 		}
-		#Entrance:target .b-party {
+		#Entrance:target .b-human_hero {
 			left: 9em;
 			}
 		#Entrance:target .b-human_firefox {
@@ -781,7 +811,7 @@ BODY {
 			visibility: visible;
 			}
 		
-		#Entrance2:target+#Entrance .b-party {
+		#Entrance2:target+#Entrance .b-human_hero {
 			left: 45em;
 			}
 		#Entrance2:target+#Entrance .b-ground__moat {
@@ -825,11 +855,9 @@ BODY {
 				<div class="b-wall__windows"></div>
 			</div>
 			
-			<div class="b-party">
-				<div class="b-human">
-					<div class="b-human__cape"></div>
-					<div class="b-human__hand"></div>
-				</div>
+			<div class="b-human b-human_hero">
+				<div class="b-human__cape"></div>
+				<div class="b-human__hand"></div>
 			</div>
 
 			<dialog>
