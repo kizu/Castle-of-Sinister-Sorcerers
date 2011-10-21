@@ -9,6 +9,8 @@
 </head>
 <body>
 	<p style="position:absolute;">
+		<a href="#Entrance">Entrance</a>
+		<a href="#Entrance2">Entrance2</a>
 		<a href="#Hall">Hall</a>
 		<a href="#Hall2">Hall2</a>
 	</p>
@@ -66,20 +68,20 @@
 
 			<dialog>
 			  <dt class="b-bubble__person">Firefox</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">You shall not pass!</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:2em">You shall not pass!</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero">…</dd>
-			  <dd class="b-bubble b-bubble_hero">Why? I'm not afraid of you, Firefox.</dd>
+			  <dd class="b-bubble b-bubble_hero" style="top:2em">…</dd>
+			  <dd class="b-bubble b-bubble_hero" style="top:5em">Why? I'm not afraid of you, Firefox.</dd>
 
 			  <dt class="b-bubble__person">Firefox</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">But I have an extension magic! I'll overload your brain with dirty memories and you'll never remember why you're here!</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:5em">But I have an extension magic! I'll overload your brain with dirty memories and you'll never remember why you're here!</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero">Haha! I have a helm of memory, it gives me 8gb protection from your brain-burning fire magic!</dd>
+			  <dd class="b-bubble b-bubble_hero" style="top:12.5em">Haha! I have a helm of memory, it gives me 8gb protection from your brain-burning fire magic!</dd>
 
 			  <dt class="b-bubble__person">Firefox</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">So sad :( Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:12.5em">So sad :( Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</dd>
 			</dialog>
 
 			<a href="#Entrance2" class="b-continue b-continue1">→</a>
@@ -381,43 +383,35 @@
 				     -o-transition: opacity .3s 5.7s,      -o-box-shadow .3s 6.3s;
 				        transition: opacity .3s 5.7s,         box-shadow .3s 6.3s;
 				}
-			#Hall .b-bubble {
-				top: -20em;
+			#Hall .b-bubble:nth-of-type(1) {
+				-webkit-transition: top 8s;
+				   -moz-transition: top 8s;
+				     -o-transition: top 8s;
+				        transition: top 8s;
 				}
-			#Hall:target .b-bubble:nth-of-type(1) {
-				top: 2em;
-				-webkit-transition: top 1s 7s;
-				   -moz-transition: top 1s 7s;
-				     -o-transition: top 1s 7s;
-				        transition: top 1s 7s;
+			#Hall .b-bubble:nth-of-type(2) {
+				-webkit-transition: top 10s;
+				   -moz-transition: top 10s;
+				     -o-transition: top 10s;
+				        transition: top 10s;
 				}
-			#Hall:target .b-bubble:nth-of-type(2) {
-				top: 4em;
-				-webkit-transition: top 1s 9s;
-				   -moz-transition: top 1s 9s;
-				     -o-transition: top 1s 9s;
-				        transition: top 1s 9s;
+			#Hall .b-bubble:nth-of-type(3) {
+				-webkit-transition: top 13s;
+				   -moz-transition: top 13s;
+				     -o-transition: top 13s;
+				        transition: top 13s;
 				}
-			#Hall:target .b-bubble:nth-of-type(3) {
-				top: 4.5em;
-				-webkit-transition: top 1s 10s;
-				   -moz-transition: top 1s 10s;
-				     -o-transition: top 1s 10s;
-				        transition: top 1s 10s;
+			#Hall .b-bubble:nth-of-type(4) {
+				-webkit-transition: top 15s;
+				   -moz-transition: top 15s;
+				     -o-transition: top 15s;
+				        transition: top 15s;
 				}
-			#Hall:target .b-bubble:nth-of-type(4) {
-				top: 8em;
-				-webkit-transition: top 1s 13s;
-				   -moz-transition: top 1s 13s;
-				     -o-transition: top 1s 13s;
-				        transition: top 1s 13s;
-				}
-			#Hall:target .b-bubble:nth-of-type(5) {
-				top: 8em;
-				-webkit-transition: top 1s 16s;
-				   -moz-transition: top 1s 16s;
-				     -o-transition: top 1s 16s;
-				        transition: top 1s 16s;
+			#Hall .b-bubble:nth-of-type(5) {
+				-webkit-transition: top 18s;
+				   -moz-transition: top 18s;
+				     -o-transition: top 18s;
+				        transition: top 18s;
 				}
 			
 		#Hall:target .b-portal {
@@ -552,19 +546,19 @@
 
 			<dialog>
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">Huh? Why didn't our webkit magic work?</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:2em;">Huh? Why didn't our webkit magic work?</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero">Safari and Chrome, you thought that your strange bugs would skrew me?</dd>
+			  <dd class="b-bubble b-bubble_hero" style="top:4em;">Safari and Chrome, you thought that your strange bugs would skrew me?</dd>
 
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">Yeah, but…</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:4.5em;">Yeah, but…</dd>
 
 			  <dt class="b-bubble__person">Hero</dt>
-			  <dd class="b-bubble b-bubble_hero">I have a chainmail of a TranslateZ! I've got it from the Caves of -webkit-transform, it's a great protection against your filty bug attacks!</dd>
+			  <dd class="b-bubble b-bubble_hero" style="top:8em;">I have a chainmail of a TranslateZ! I've got it from the Caves of -webkit-transform, it's a great protection against your filty bug attacks!</dd>
 
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
-			  <dd class="b-bubble b-bubble_sorcerer">Well, go for now, but our 3D transforms would get you sooner or later!</dd>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:8em;">Well, go for now, but our 3D transforms would get you sooner or later!</dd>
 
 			</dialog>
 

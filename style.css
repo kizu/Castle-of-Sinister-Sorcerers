@@ -650,6 +650,9 @@ BODY {
 			   -moz-border-radius: .2em;
 			        border-radius: .2em;
 			}
+			.b-scene:not(:target) .b-bubble {
+				top: -2000em !important;
+				}
 			.b-bubble__person {
 				position: absolute;
 				right: 100%;
@@ -664,46 +667,40 @@ BODY {
 				text-align: right;
 				}
 		#Entrance .b-bubble:nth-of-type(1) {
-			-webkit-transition: top 2s 9s;
-			   -moz-transition: top 2s 9s;
-			     -o-transition: top 2s 9s;
-			        transition: top 2s 9s;
-			top: -22em;
+			-webkit-transition: top 11s;
+			   -moz-transition: top 11s;
+			     -o-transition: top 11s;
+			        transition: top 11s;
 			}
 		#Entrance .b-bubble:nth-of-type(2) {
-			-webkit-transition: top 2s 11s;
-			   -moz-transition: top 2s 11s;
-			     -o-transition: top 2s 11s;
-			        transition: top 2s 11s;
-			top: -22em;
+			-webkit-transition: top 13s;
+			   -moz-transition: top 13s;
+			     -o-transition: top 13s;
+			        transition: top 13s;
 			}
 		#Entrance .b-bubble:nth-of-type(3) {
-			-webkit-transition: top 2s 11.5s;
-			   -moz-transition: top 2s 11.5s;
-			     -o-transition: top 2s 11.5s;
-			        transition: top 2s 11.5s;
-			top: -17em;
+			-webkit-transition: top 13.5s;
+			   -moz-transition: top 13.5s;
+			     -o-transition: top 13.5s;
+			        transition: top 13.5s;
 			}
 		#Entrance .b-bubble:nth-of-type(4) {
-			-webkit-transition: top 2s 13s;
-			   -moz-transition: top 2s 13s;
-			     -o-transition: top 2s 13s;
-			        transition: top 2s 13s;
-			top: -17em;
+			-webkit-transition: top 15s;
+			   -moz-transition: top 15s;
+			     -o-transition: top 15s;
+			        transition: top 15s;
 			}
 		#Entrance .b-bubble:nth-of-type(5) {
-			-webkit-transition: top 2s 17s;
-			   -moz-transition: top 2s 17s;
-			     -o-transition: top 2s 17s;
-			        transition: top 2s 17s;
-			top: -11.5em;
+			-webkit-transition: top 19s;
+			   -moz-transition: top 19s;
+			     -o-transition: top 19s;
+			        transition: top 19s;
 			}
 		#Entrance .b-bubble:nth-of-type(6) {
-			-webkit-transition: top 2s 20s;
-			   -moz-transition: top 2s 20s;
-			     -o-transition: top 2s 20s;
-			        transition: top 2s 20s;
-			top: -11.5em;
+			-webkit-transition: top 22s;
+			   -moz-transition: top 22s;
+			     -o-transition: top 22s;
+			        transition: top 22s;
 			}
 		
 #Entrance:target,
@@ -740,12 +737,6 @@ BODY {
 			     -o-transform: rotate(10deg);
 			        transform: rotate(10deg);
 			}
-		#Entrance:target .b-bubble:nth-of-type(1) { top: 2em; }
-		#Entrance:target .b-bubble:nth-of-type(2) { top: 2em; }
-		#Entrance:target .b-bubble:nth-of-type(3) { top: 5em; }
-		#Entrance:target .b-bubble:nth-of-type(4) { top: 5em; }
-		#Entrance:target .b-bubble:nth-of-type(5) { top: 12.5em; }
-		#Entrance:target .b-bubble:nth-of-type(6) { top: 12.5em; }
 
 		#Entrance2:target+#Entrance .b-bubble {
 			-webkit-transition: top 2s;
