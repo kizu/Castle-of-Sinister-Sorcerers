@@ -17,19 +17,11 @@
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionBig" />
 	
 	<div class="b-display">
-		<input class="b-choose-me__control" type="checkbox" id="at_Setup"     />
-		<input class="b-choose-me__control" type="checkbox" id="at_Start"     />
-		<input class="b-choose-me__control" type="checkbox" id="at_Entrance"  />
-		<input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
-		<input class="b-choose-me__control" type="checkbox" id="at_Hall"      checked="checked"/>
-		<input class="b-choose-me__control" type="checkbox" id="at_Hall2"     checked="checked"/>
-		<input class="b-choose-me__control" type="checkbox" id="at_Opera"     />
-		<input class="b-choose-me__control" type="checkbox" id="at_Opera2"    />
-
 		<div class="b-scene b-scene_interactive" id="Prepare">
 			<label class="b-choose-me b-choose-me_start" for="at_Setup">Start</label>
 		</div>
 		
+		<input class="b-choose-me__control" type="checkbox" id="at_Setup"     />
 		<div class="b-scene b-scene_interactive" id="Setup">
 			<h1><span class="b-lang" data-ru="Выберете разрешение"><span class="b-lang__en">Choose Resolution</span></span></h1>
 			<p><label class="b-choose-me" for="resolutionSmall"><span class="b-lang" data-ru="Маленькое"><span class="b-lang__en">Small</span></span></label></p>
@@ -42,6 +34,7 @@
 			<p class="b-confirm"><label class="b-choose-me" for="at_Start"><span class="b-lang" data-ru="Продолжить"><span class="b-lang__en">Continue</span></span></label></p>
 		</div>
 
+		<input class="b-choose-me__control" type="checkbox" id="at_Start"     />
 		<div class="b-scene" id="Start">
 			<div class="b-frame b-frame_bg"></div>
 			<div class="b-frame b-frame_flash"></div>
@@ -59,6 +52,8 @@
 			<label for="at_Entrance" class="b-continue">→</label>
 		</div>
 
+		<input class="b-choose-me__control" type="checkbox" id="at_Entrance"  />
+		<input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
 		<div class="b-scene" id="Entrance">
 			<div class="b-frame b-frame_mountains"></div>
 			<div class="b-ground">
@@ -102,6 +97,8 @@
 			<label for="at_Hall" class="b-continue b-continue2">→</label>
 		</div>
 
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall"      checked="checked"/>
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall2"     checked="checked"/>
 		<div class="b-scene" id="Hall">
 			<div class="b-frame b-frame_bg">
 				<div class="b-stairs"></div>
@@ -157,7 +154,6 @@
 
 			  <dt class="b-bubble__person">Chrome and Safari</dt>
 			  <dd class="b-bubble b-bubble_sorcerer" style="top:8em;"><span class="b-lang" data-ru="Ну, тогда проходи, но рано или поздно наши 3D-трансформации достанут и тебя!"><span class="b-lang__en">Well, go for now, but our 3D transforms would get you sooner or later!</span></span></dd>
-
 			</dialog>
 
 			<label for="at_Hall2" class="b-continue b-continue1">→</label>
@@ -170,6 +166,7 @@
 	background: #641F00;
 	}
 #Opera {
+	-webkit-transition: none; /* Safari is buggy if there is an opcity transition -_- */
 	}
 
 #Opera .b-frame_bg {
@@ -186,6 +183,9 @@
 		-webkit-border-radius: 10em/8em;
 		   -moz-border-radius: 10em/8em;
 		        border-radius: 10em/8em;
+		}
+	
+	#Opera .b-curtain {
 		}
 	
 	#Opera .b-curtain:before {
@@ -227,6 +227,7 @@
 		        border-radius: 1em/2em;
 		}
 	#Opera .b-curtain__top {
+		-webkit-transform: translateZ(0);
 		position: absolute;
 		top: -12em;
 		right: -9.5em;
@@ -309,10 +310,10 @@
 		     -o-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
 		        box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
 		
-		-webkit-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
-		   -moz-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
-		     -o-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
-		        transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
+		-webkit-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+		   -moz-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+		     -o-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+		        transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
 		
 		}
 	#Opera .b-curtain__left:nth-child(2n),
@@ -349,31 +350,259 @@
 		float: right;
 		}
 	#Opera .b-curtain__left:last-of-type {
-		margin-right: -2em;
+		margin-right: -20em;
 		}
 	#Opera .b-curtain__right:last-of-type {
-		margin-left: -2em;
+		margin-left: -20em;
 		}
 	
 	
 #Opera .b-human {
-	font-size: .5em;
 	}
 	#Opera .b-human_hero {
 		bottom: 6em;
 		left: 2em;
 		}
 	#Opera .b-human_hero {
-		bottom: 5.8em;
-		left: 2em;
+		bottom: 3em;
+		left: -2em;
+		-webkit-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s;
+		   -moz-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s;
+		     -o-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s;
+		        transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s;
+		
 		}
 	#Opera .b-human_opera {
-		bottom: 4em;
-		font-size: .75em;
-		left: 44em;
-		z-index: -2;
+		bottom: 3em;
+		left: 33em;
+		z-index: -3;
+		-webkit-transition: left 1s 4s, margin 3s 32s;
+		   -moz-transition: left 1s 4s, margin 3s 32s;
+		     -o-transition: left 1s 4s, margin 3s 32s;
+		        transition: left 1s 4s, margin 3s 32s;
+		
+		background: #F90000;
 		}
+	#Opera .b-human_opera:before {
+		border-color: #B10921;
+		}
+	
+	#Opera .b-human_opera:after {
+		content: "";
+		position: absolute;
+		top: .2em;
+		left: -.3em;
+		height: 1.8em;
+		width: .5em;
+		background: inherit;
+		
+		-webkit-border-radius: .5em/2em 0 0 0.5em;
+		   -moz-border-radius: .5em/2em 0 0 0.5em;
+		        border-radius: .5em/2em 0 0 0.5em;
+		-webkit-transform: rotate(10deg);
+		   -moz-transform: rotate(10deg);
+		     -o-transform: rotate(10deg);
+		        transform: rotate(10deg);
+		
+		}
+	
+	#Opera .b-human_opera .b-human__hand {
+		z-index: 1;
+		margin-left: -.2em;
+		background: #D60000;
+		
+		-webkit-transition: -webkit-transform .3s 5.5s;
+		   -moz-transition:    -moz-transform .3s 5.5s;
+		     -o-transition:      -o-transform .3s 5.5s;
+		        transition:         transform .3s 5.5s;
+		
+		}
+	
+	#Opera .b-human_opera .b-human__hand:before,
+	#Opera .b-human_opera .b-human__hand:after {
+		display: none;
+		}
+	#Opera .b-sonic-waves {
+		position: absolute;
+		left: 28em;
+		top: 21em;
+		width: 4em;
+		height: 2em;
+		opacity: 0;
+		z-index: -2;
+		
+		-webkit-border-radius: 2em 2em 0 0;
+		   -moz-border-radius: 2em 2em 0 0;
+		        border-radius: 2em 2em 0 0;
+		
+		-webkit-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+		   -moz-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+		     -o-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+		        box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+		-webkit-transform: rotate(-30deg);
+		   -moz-transform: rotate(-30deg);
+		     -o-transform: rotate(-30deg);
+		        transform: rotate(-30deg);
+		-webkit-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+		   -moz-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+		     -o-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+		        transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+		
+		}
+	#Opera .b-boulder {
+		position: absolute;
+		left: 13em;
+		top: 0;
+		
+		width: 4em;
+		height: 4em;
+		background: #564F63;
+		-webkit-border-radius: 2.2em 1.2em 3em 1.5em;
+		   -moz-border-radius: 2.2em 1.2em 3em 1.5em;
+		        border-radius: 2.2em 1.2em 3em 1.5em;
+		-webkit-transform: rotate(20deg);
+		   -moz-transform: rotate(20deg);
+		     -o-transform: rotate(20deg);
+		        transform: rotate(20deg);
+		-webkit-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+		   -moz-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+		     -o-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+		        box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+		-webkit-transition: top .5s 7s, -webkit-transform .5s 7s;
+		   -moz-transition: top .5s 7s,    -moz-transform .5s 7s;
+		     -o-transition: top .5s 7s,      -o-transform .5s 7s;
+		        transition: top .5s 7s,         transform .5s 7s;
+		}
+		#Opera .b-boulder:nth-of-type(2) {
+			left: 3em;
+			-webkit-transition: top .5s 7.7s, -webkit-transform .5s 7.7s;
+			   -moz-transition: top .5s 7.7s,    -moz-transform .5s 7.7s;
+			     -o-transition: top .5s 7.7s,      -o-transform .5s 7.7s;
+			        transition: top .5s 7.7s,         transform .5s 7.7s;
+			}
+		#Opera .b-boulder:nth-of-type(3) {
+			left: 6em;
+			-webkit-transition: top .5s 8s, -webkit-transform .5s 8s;
+			   -moz-transition: top .5s 8s,    -moz-transform .5s 8s;
+			     -o-transition: top .5s 8s,      -o-transform .5s 8s;
+			        transition: top .5s 8s,         transform .5s 8s;
+			}
+		#Opera .b-boulder:nth-of-type(4) {
+			left: 8.5em;
+			-webkit-transition: top .5s 8.4s, -webkit-transform .5s 8.4s;
+			   -moz-transition: top .5s 8.4s,    -moz-transform .5s 8.4s;
+			     -o-transition: top .5s 8.4s,      -o-transform .5s 8.4s;
+			        transition: top .5s 8.4s,         transform .5s 8.4s;
+			}
+	#Opera .b-ppsb {
+		position: absolute;
+		left: 50em;
+		top: -2;
+		width: 4em;
+		height: 4em;
+		background: #FFF;
+		-webkit-border-radius: 2.5em;
+		   -moz-border-radius: 2.5em;
+		        border-radius: 2.5em;
+		-webkit-transform: rotate(-360deg);
+		   -moz-transform: rotate(-360deg);
+		     -o-transform: rotate(-360deg);
+		        transform: rotate(-360deg);
+		-webkit-transition: -webkit-transform 2s 9s ease, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+		   -moz-transition:    -moz-transform 2s 9s ease, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+		     -o-transition:      -o-transform 2s 9s ease, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+		        transition:         transform 2s 9s ease, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+		
+		}
+		#Opera .b-ppsb:before {
+			content: "";
+			position: absolute;
+			top: .25em;
+			left: .25em;
+			width: 2em;
+			height: 2em;
+			border: .75em solid #402724;
+			border-right-color: #C00;
+			-webkit-border-radius: 2.5em;
+			   -moz-border-radius: 2.5em;
+			        border-radius: 2.5em;
+			}
+		#Opera .b-ppsb:after {
+			content: "";
+			position: absolute;
+			top: .9em;
+			left: 2.1em;
+			width: 1.9em;
+			height: 1.9em;
+			border-top: .3em solid #FFF;
+			border-left: .3em solid #FFF;
+			-webkit-transform: rotate(-45deg);
+			   -moz-transform: rotate(-45deg);
+			     -o-transform: rotate(-45deg);
+			        transform: rotate(-45deg);
+			}
+		#Opera .b-ppsb__ray {
+			text-align: left;
+			text-indent: 18em;
+			position: absolute;
+			overflow: hidden;
+			left: 2em;
+			top: 1.25em;
 
+			width: 16em;
+
+			color: lime;
+			white-space: pre;
+			-webkit-transform: rotate(180deg);
+			   -moz-transform: rotate(170deg);
+			     -o-transform: rotate(170deg);
+			        transform: rotate(170deg);
+			-webkit-transition: text-indent 3s 11s, color 3s 10s;
+			   -moz-transition: text-indent 3s 11s, color 3s 10s;
+			     -o-transition: text-indent 3s 11s, color 3s 10s;
+			        transition: text-indent 3s 11s, color 3s 10s;
+			
+			}
+		#Opera .b-ppsb__ray:before {
+			content: "TROLOLOLOLO                      TROLOLOLOLO                    TROLOLOLOLO";
+			}
+			
+
+	#Opera .b-bubble {
+		background: rgba(0,0,0,.7);
+		-webkit-font-smoothing: subpixel-antialiased;
+		}
+	
+	#Opera .b-bubble:nth-of-type(1) {
+		-webkit-transition: top 15s;
+		   -moz-transition: top 15s;
+		     -o-transition: top 15s;
+		        transition: top 15s;
+		}
+	#Opera .b-bubble:nth-of-type(2) {
+		-webkit-transition: top 20s;
+		   -moz-transition: top 20s;
+		     -o-transition: top 20s;
+		        transition: top 20s;
+		}
+	#Opera .b-bubble:nth-of-type(3) {
+		-webkit-transition: top 26s;
+		   -moz-transition: top 26s;
+		     -o-transition: top 26s;
+		        transition: top 26s;
+		}
+	#Opera .b-bubble:nth-of-type(4) {
+		-webkit-transition: top 31s;
+		   -moz-transition: top 31s;
+		     -o-transition: top 31s;
+		        transition: top 31s;
+		}
+	#Opera .b-bubble:nth-of-type(5) {
+		-webkit-transition: top 35s;
+		   -moz-transition: top 35s;
+		     -o-transition: top 35s;
+		        transition: top 35s;
+		}
 #at_Opera:checked ~ #Opera .b-curtain__left {
 	left: -3em;
 
@@ -387,12 +616,93 @@
 	margin-right: -.7em;
 	}
 
+#at_Opera:checked ~ #Opera .b-human_hero {
+	left: 7em;
+	margin-left: 7em;
+	margin-bottom: 3em;
+	}
+#at_Opera:checked ~ #Opera .b-human_opera {
+	left: 31em;
+	margin-left: 10em;
+	}
+	#at_Opera:checked ~ #Opera .b-human_hero .b-human__hand {
+		-webkit-transform: rotate(-100deg);
+		   -moz-transform: rotate(-100deg);
+		     -o-transform: rotate(-100deg);
+		        transform: rotate(-100deg);
+		left: .4em;
+		}
+	#at_Opera:checked ~ #Opera .b-human_opera .b-human__hand {
+		-webkit-transform: rotate(120deg);
+		   -moz-transform: rotate(120deg);
+		     -o-transform: rotate(120deg);
+		        transform: rotate(120deg);
+		left: .4em;
+		}
+		#at_Opera:checked ~ #Opera .b-sonic-waves {
+			opacity: 1;
+			left: 9em;
+			top: -4em;
+			}
+#at_Opera:checked ~ #Opera .b-boulder {
+	top: 23.6em;
+	-webkit-transform: rotate(120deg);
+	   -moz-transform: rotate(120deg);
+	     -o-transform: rotate(120deg);
+	        transform: rotate(120deg);
+	}
+#at_Opera:checked ~ #Opera .b-boulder:nth-of-type(2) {
+	-webkit-transform: rotate(30deg);
+	   -moz-transform: rotate(30deg);
+	     -o-transform: rotate(30deg);
+	        transform: rotate(30deg);
+	}
+#at_Opera:checked ~ #Opera .b-boulder:nth-of-type(3) {
+	-webkit-transform: rotate(-70deg);
+	   -moz-transform: rotate(-70deg);
+	     -o-transform: rotate(-70deg);
+	        transform: rotate(-70deg);
+	}
+#at_Opera:checked ~ #Opera .b-boulder:nth-of-type(4) {
+	-webkit-transform: rotate(90deg);
+	   -moz-transform: rotate(90deg);
+	     -o-transform: rotate(90deg);
+	        transform: rotate(90deg);
+	}
+#at_Opera:checked ~ #Opera .b-ppsb {
+	-webkit-transform: rotate(145deg);
+	   -moz-transform: rotate(145deg);
+	     -o-transform: rotate(145deg);
+	        transform: rotate(145deg);
+	left: 28em;
+	top: 9em;
+	margin: -16em 0 0 -16em;
+	}
 
+#at_Opera:checked ~ #Opera .b-ppsb__ray {
+	text-indent: -62em;
+	color: violet;
+	}
+
+	#at_Entrance2:checked ~ #Entrance .b-continue1 {
+		left: 0 !important;
+		-webkit-transition: left 37s ease;
+		   -moz-transition: left 37s ease;
+		     -o-transition: left 37s ease;
+		        transition: left 37s ease;
+		}
 
 		</style>
 
+		<input class="b-choose-me__control" type="checkbox" id="at_Opera"     checked="checked"/>
+		<input class="b-choose-me__control" type="checkbox" id="at_Opera2"    />
 		<div class="b-scene" id="Opera">
+			<span class="b-boulder"></span>
+			<span class="b-boulder"></span>
+			<span class="b-boulder"></span>
+			<span class="b-boulder"></span>
 			<div class="b-frame b-curtain">
+				<i class="b-curtain__left"></i>
 				<i class="b-curtain__left"></i>
 				<i class="b-curtain__left"></i>
 				<i class="b-curtain__left"></i>
@@ -430,6 +740,29 @@
 				<div class="b-human__cape"></div>
 				<div class="b-human__hand"></div>
 			</div>
+			
+			<div class="b-sonic-waves"></div>
+			<div class="b-ppsb">
+				<div class="b-ppsb__ray"></div>
+			</div>
+
+			<dialog>
+			  <dt class="b-bubble__person">Opera</dt>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:4em;"><span class="b-lang" data-ru="Э? Почему это наша багия вебкитов не сработала?"><span class="b-lang__en">Hey, it's not funny! Not only my fellow sorcerers' bugs didn't work for you, but even my, specially baked bug magic couldn't stop you!</span></span></dd>
+
+			  <dt class="b-bubble__person">Opera</dt>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:11em;"><span class="b-lang" data-ru="Э? Почему это наша багия вебкитов не сработала?"><span class="b-lang__en">And even the death ray of evangelism didn't worked out! Why? Why??777</span></span></dd>
+
+			  <dt class="b-bubble__person">Hero</dt>
+			  <dd class="b-bubble b-bubble_hero" style="top:15em;"><span class="b-lang" data-ru="Safari и Chrome, вы думали, что ваши странные баги уничтожат меня?"><span class="b-lang__en">That's what you get when we report bugs properly! You're slow, but hopefully your bad magic goes away after while.</span></span></dd>
+ 
+			  <dt class="b-bubble__person">Opera</dt>
+			  <dd class="b-bubble b-bubble_sorcerer" style="top:15em;"><span class="b-lang" data-ru="Да, но…"><span class="b-lang__en">It's so sad that my magic is not the same as it was some years ago. But, you know, maybe some of our non-fixed bugs would get you while you would be asleep! Hahaha!</span></span></dd>
+
+			  <dt class="b-bubble__person">Hero</dt>
+			  <dd class="b-bubble b-bubble_hero" style="top:20.5em;"><span class="b-lang" data-ru="Да, но…"><span class="b-lang__en">Hmm, if you'd do any more nasty things, more heroes like google or apple would just ignore you. So, don't be so stingy.</span></span></dd>
+
+			</dialog>
 
 			<label for="at_Opera2" class="b-continue b-continue1">→</label>
 			<label for="at_Ololo" class="b-continue b-continue2">→</label>

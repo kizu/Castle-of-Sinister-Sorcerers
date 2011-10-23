@@ -3,6 +3,7 @@
 /* Styles for regular changes */
 #at_Entrance2:checked ~ #Entrance .b-bubble,
 #at_Hall2:checked     ~ #Hall     .b-bubble,
+#at_Opera2:checked    ~ #Opera    .b-bubble,
 #at_Entrance2:checked ~ #Entrance .b-continue1,
 #at_Hall2:checked     ~ #Hall     .b-continue1,
 #at_Opera2:checked    ~ #Opera    .b-continue1 {
@@ -84,8 +85,6 @@ BODY {
 	   -moz-transition: opacity .5s, visibility .5s;
 	     -o-transition: opacity .5s, visibility .5s;
 	        transition: opacity .5s, visibility .5s;
-
-	-webkit-animation: bugfix infinite 1s;
 	}
 	.b-scene:after,
 	.b-scene:before {
@@ -663,7 +662,8 @@ BODY {
 			        border-radius: .2em;
 			}
 			#at_Entrance:not(:checked) ~ #Entrance .b-bubble,
-			#at_Hall:not(:checked) ~ #Hall .b-bubble {
+			#at_Hall:not(:checked) ~ #Hall .b-bubble,
+			#at_Opera:not(:checked) ~ #Opera .b-bubble {
 				top: -2000em !important;
 				}
 			.b-bubble__person {
