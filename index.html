@@ -372,6 +372,13 @@
 		        transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s;
 		
 		}
+		#Opera .b-human_hero .b-human__hand {
+			-webkit-transition: -webkit-transform .3s 10.5s;
+			   -moz-transition:    -moz-transform .3s 10.5s;
+			     -o-transition:      -o-transform .3s 10.5s;
+			        transition:         transform .3s 10.5s;
+			}
+
 	#Opera .b-human_opera {
 		bottom: 3em;
 		left: 33em;
@@ -417,7 +424,7 @@
 		        transition:         transform .3s 5.5s;
 		
 		}
-	
+
 	#Opera .b-human_opera .b-human__hand:before,
 	#Opera .b-human_opera .b-human__hand:after {
 		display: none;
@@ -684,17 +691,17 @@
 	color: violet;
 	}
 
-	#at_Entrance2:checked ~ #Entrance .b-continue1 {
-		left: 0 !important;
-		-webkit-transition: left 37s ease;
-		   -moz-transition: left 37s ease;
-		     -o-transition: left 37s ease;
-		        transition: left 37s ease;
-		}
+#at_Opera:checked ~ #Opera .b-continue1 {
+	left: 0 !important;
+	-webkit-transition: left 37s ease;
+	   -moz-transition: left 37s ease;
+	     -o-transition: left 37s ease;
+	        transition: left 37s ease;
+	}
 
 		</style>
 
-		<input class="b-choose-me__control" type="checkbox" id="at_Opera"     checked="checked"/>
+		<input class="b-choose-me__control" type="checkbox" id="at_Opera"     />
 		<input class="b-choose-me__control" type="checkbox" id="at_Opera2"    />
 		<div class="b-scene" id="Opera">
 			<span class="b-boulder"></span>
