@@ -40,8 +40,28 @@ BODY {
 		font-size: 1.75em;
 		}
 
-	.b-display:after,
-	.b-display:before {
+/* Scene */
+.b-scene {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: inherit;
+
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .5s, visibility .5s;
+	   -moz-transition: opacity .5s, visibility .5s;
+	     -o-transition: opacity .5s, visibility .5s;
+	        transition: opacity .5s, visibility .5s;
+
+	-webkit-animation: bugfix infinite 1s;
+	}
+	.b-scene:after,
+	.b-scene:before {
 		content: "";
 		position: absolute;
 		z-index: 9001;
@@ -60,43 +80,21 @@ BODY {
 		     -o-transform: scale(3,1);
 		        transform: scale(3,1);
 		}
-		.b-display:after {
+		.b-scene:after {
 			-webkit-transform: scale(1,4);
 			   -moz-transform: scale(1,4);
 			     -o-transform: scale(1,4);
 			        transform: scale(1,4);
 			}
-/* Scene */
-.b-scene {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 
-	background: inherit;
-
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: opacity .5s, visibility .5s;
-	   -moz-transition: opacity .5s, visibility .5s;
-	     -o-transition: opacity .5s, visibility .5s;
-	        transition: opacity .5s, visibility .5s;
-
-	-webkit-animation: bugfix infinite 1s;
-	}
-
-	.b-scene_debug,
-	.b-scene:target,
-	.b-scene_extra:target+.b-scene,
-	#okResolution:checked ~ .b-display .b-scene_setup_resolution,
-	#okResolution:not(:checked) ~ .b-display .b-scene_setup_sound {
+	#Prepare,
+	#at_Start:checked ~ #Start,
+	#at_Setup:checked ~ #Setup,
+	#at_Entrance:checked ~ #Entrance,
+	#at_Hall:checked ~ #Hall,
+	.b-scene_debug {
 		opacity: 1;
 		visibility: visible;
-		-webkit-transition: none 0;
-		   -moz-transition: none 0;
-		     -o-transition: none 0;
-		        transition: none 0;
 		}
 
 /* Chooser */	
@@ -130,19 +128,15 @@ BODY {
 		position: fixed !important;
 		visibility: hidden !important;
 		left: -100px !important;
+		-webkit-animation: bugfix infinite 1s;
 		}
 	.b-choose-me_start {
 		position: relative;
-		z-index: 9002;
 		top: 50%;
 		font-size: 2em;
 		display: inline-block;
 		margin-top: -.75em;
 		}
-		.b-scene:target ~ .b-choose-me_start {
-			display: none;
-			}
-
 
 .b-frame {
 	position: absolute;
@@ -160,6 +154,7 @@ BODY {
 	height: 100%;
 
 	text-align: right;
+	cursor: pointer;
 
 	font-size: 5em;
 	line-height: 6em;
@@ -261,38 +256,38 @@ BODY {
 		}
 	
 	
-	#Start:target .b-frame_bg {
+	#at_Start:checked ~ #Start .b-frame_bg {
 		background: #000;
 		}
-	#Start:target .b-frame_flash {
+	#at_Start:checked ~ #Start .b-frame_flash {
 		background: #FFF;
 		}
-	#Start:target .b-frame_flash_dark {
+	#at_Start:checked ~ #Start .b-frame_flash_dark {
 		background: #000;
 		}
-	#Start:target .b-frame_bg2 {
+	#at_Start:checked ~ #Start .b-frame_bg2 {
 		background: #000;
 		}
-	#Start:target .b-castle {
+	#at_Start:checked ~ #Start .b-castle {
 		top: 100%;
 		opacity: 1;
 		}
-	#Start:target .b-logo {
+	#at_Start:checked ~ #Start .b-logo {
 		top: 3em;
 		opacity: 1;
 		}
 	
-	#Start:target .b-logo__i1 {
+	#at_Start:checked ~ #Start .b-logo__i1 {
 		width: 4.4em;
 		word-spacing: .3em;
 		}
-	#Start:target .b-logo__i2 {
+	#at_Start:checked ~ #Start .b-logo__i2 {
 		width: 3.5em;
 		}
-	#Start:target .b-logo__i3 {
+	#at_Start:checked ~ #Start .b-logo__i3 {
 		width: 4em;
 		}
-	#Start:target .b-continue {
+	#at_Start:checked ~ #Start .b-continue {
 		left: 0 !important;
 		-webkit-transition: left 9s ease;
 		   -moz-transition: left 9s ease;
@@ -650,7 +645,8 @@ BODY {
 			   -moz-border-radius: .2em;
 			        border-radius: .2em;
 			}
-			.b-scene:not(:target) .b-bubble {
+			#at_Entrance:not(:checked) ~ #Entrance .b-bubble,
+			#at_Hall:not(:checked) ~ #Hall .b-bubble {
 				top: -2000em !important;
 				}
 			.b-bubble__person {
@@ -703,34 +699,34 @@ BODY {
 			        transition: top 22s;
 			}
 		
-#Entrance:target,
-#Entrance2:target+#Entrance {
+#at_Entrance:checked ~ #Entrance,
+#at_Entrance2:checked ~ #Entrance, {
 	background: #30320B;
 	}
 	#Entrance .b-clouds,
-	#Entrance2:target+#Entrance .b-clouds {
+	#at_Entrance2:checked ~ #Entrance .b-clouds {
 		right: 60em;
 		}
-		#Entrance:target .b-human_hero {
+		#at_Entrance:checked ~ #Entrance .b-human_hero {
 			left: 9em;
 			}
-		#Entrance:target .b-human_firefox {
+		#at_Entrance:checked ~ #Entrance .b-human_firefox {
 			left: 25.75em;
 			}
-		#Entrance:target .b-human_firefox .b-human__hand {
+		#at_Entrance:checked ~ #Entrance .b-human_firefox .b-human__hand {
 			left: .25em;
 			-webkit-transform: rotate(125deg);
 			   -moz-transform: rotate(125deg);
 			     -o-transform: rotate(125deg);
 			        transform: rotate(125deg);
 			}
-		#Entrance:target .b-human_firefox .b-human__cape {
+		#at_Entrance:checked ~ #Entrance .b-human_firefox .b-human__cape {
 			-webkit-transform: rotate(-10deg);
 			   -moz-transform: rotate(-10deg);
 			     -o-transform: rotate(-10deg);
 			        transform: rotate(-10deg);
 			}
-		#Entrance2:target+#Entrance .b-human_firefox .b-human__hand {
+		#at_Entrance2:checked ~ #Entrance .b-human_firefox .b-human__hand {
 			left: 0;
 			-webkit-transform: rotate(10deg);
 			   -moz-transform: rotate(10deg);
@@ -738,23 +734,23 @@ BODY {
 			        transform: rotate(10deg);
 			}
 
-		#Entrance2:target+#Entrance .b-bubble {
+		#at_Entrance2:checked ~ #Entrance .b-bubble {
 			-webkit-transition: top 2s;
 			   -moz-transition: top 2s;
 			     -o-transition: top 2s;
 			        transition: top 2s;
 			}
 
-		#Entrance2:target+#Entrance .b-bubble { top: 200em; }
+		#at_Entrance2:checked ~ #Entrance .b-bubble { top: 200em; }
 
-		#Entrance2:target+#Entrance {
+		#at_Entrance2:checked ~ #Entrance {
 			visibility: visible;
 			}
 		
-		#Entrance2:target+#Entrance .b-human_hero {
+		#at_Entrance2:checked ~ #Entrance .b-human_hero {
 			left: 45em;
 			}
-		#Entrance2:target+#Entrance .b-ground__moat {
+		#at_Entrance2:checked ~ #Entrance .b-ground__moat {
 			-webkit-transform: rotate(0) translate(0, 0);
 			   -moz-transform: rotate(0) translate(0, 0);
 			     -o-transform: rotate(0) translate(0, 0);
@@ -762,17 +758,22 @@ BODY {
 			margin-top: -.5em;
 			
 			}
-		#Entrance:target .b-continue1 {
+		#at_Entrance:checked ~ #Entrance .b-continue1 {
 			left: 0 !important;
 			-webkit-transition: left 24s ease;
 			   -moz-transition: left 24s ease;
 			     -o-transition: left 24s ease;
 			        transition: left 24s ease;
 			}
-		#Entrance2:target+#Entrance .b-continue2 {
+		#at_Entrance2:checked ~ #Entrance .b-continue2 {
 			left: 0 !important;
 			-webkit-transition: left 6s ease;
 			   -moz-transition: left 6s ease;
 			     -o-transition: left 6s ease;
 			        transition: left 6s ease;
+			}
+
+		#at_Entrance2:checked ~ #Entrance .b-bubble,
+		#at_Entrance2:checked ~ #Entrance .b-continue1 {
+			display: none;
 			}

@@ -8,23 +8,29 @@
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<p style="position:absolute;">
-		<a href="#Entrance">Entrance</a>
-		<a href="#Entrance2">Entrance2</a>
-		<a href="#Hall">Hall</a>
-		<a href="#Hall2">Hall2</a>
-	</p>
 	<!-- It's dangerous to go alone, take this comment for the start! -->
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionSmall" />
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionMedium" checked="checked" />
 	<input class="b-choose-me__control" name="resolution" type="radio" id="resolutionBig" />
+	
 	<div class="b-display">
+		<input class="b-choose-me__control" type="checkbox" id="at_Setup" />
+		<input class="b-choose-me__control" type="checkbox" id="at_Start" />
+		<input class="b-choose-me__control" type="checkbox" id="at_Entrance" />
+		<input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall" />
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall2" />
+
+		<div class="b-scene b-scene_interactive" id="Prepare">
+			<label class="b-choose-me b-choose-me_start" for="at_Setup">Start</label>
+		</div>
+		
 		<div class="b-scene b-scene_interactive" id="Setup">
 			<h1>Choose Resolution</h1>
 			<p><label class="b-choose-me" for="resolutionSmall">Small</label></p>
 			<p><label class="b-choose-me" for="resolutionMedium">Medium</label></p>
 			<p><label class="b-choose-me" for="resolutionBig">Big</label></p>
-			<p class="b-confirm"><a class="b-choose-me" href="#Start">Ok</a></p>
+			<p class="b-confirm"><label class="b-choose-me" for="at_Start">Ok</label></p>
 		</div>
 
 		<div class="b-scene" id="Start">
@@ -41,7 +47,7 @@
 			<h1 class="b-logo">
 				C<span class="b-logo__i b-logo__i1">astle of </span>S<span class="b-logo__i b-logo__i2">inister </span>S<span class="b-logo__i b-logo__i3">orcerers</span>
 			</h1>
-			<a href="#Entrance" class="b-continue">→</a>
+			<label for="at_Entrance" class="b-continue">→</label>
 		</div>
 
 		<div class="b-scene b-scene_extra" id="Entrance2"></div>
@@ -84,8 +90,8 @@
 			  <dd class="b-bubble b-bubble_sorcerer" style="top:12.5em">So sad :( Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</dd>
 			</dialog>
 
-			<a href="#Entrance2" class="b-continue b-continue1">→</a>
-			<a href="#Hall" class="b-continue b-continue2">→</a>
+			<label for="at_Entrance2" class="b-continue b-continue1">→</label>
+			<label for="at_Hall" class="b-continue b-continue2">→</label>
 		</div>
 
 		<style>
@@ -414,7 +420,7 @@
 				        transition: top 18s;
 				}
 			
-		#Hall:target .b-portal {
+		#at_Hall:checked ~ #Hall .b-portal {
 			left: 29em;
 			background: rgba(255,255,0,0);
 			-webkit-transform: scale(1);
@@ -422,27 +428,27 @@
 			     -o-transform: scale(1);
 			        transform: scale(1);
 			}
-		#Hall:target .b-human_hero {
+		#at_Hall:checked ~ #Hall .b-human_hero {
 			left: 8em;
 			bottom: 4.5em;
 			}
-		#Hall:target .b-human-behavior {
+		#at_Hall:checked ~ #Hall .b-human-behavior {
 			left: -4em;
 			bottom: .5em;
 			}
-		#Hall:target .b-human_hero .b-human__hand {
+		#at_Hall:checked ~ #Hall .b-human_hero .b-human__hand {
 			-webkit-transform: rotate(-80deg);
 			   -moz-transform: rotate(-80deg);
 			     -o-transform: rotate(-80deg);
 			        transform: rotate(-80deg);
 			}
-		#Hall:target .b-human_sorcerer .b-human__hand {
+		#at_Hall:checked ~ #Hall .b-human_sorcerer .b-human__hand {
 			-webkit-transform: rotate(-380deg);
 			   -moz-transform: rotate(-380deg);
 			     -o-transform: rotate(-380deg);
 			        transform: rotate(-380deg);
 			}
-		#Hall:target .b-bullets {
+		#at_Hall:checked ~ #Hall .b-bullets {
 			bottom: 8em;
 			left: 4em;
 			-webkit-transform: rotate(-30deg);
@@ -451,32 +457,32 @@
 			        transform: rotate(-30deg);
 			margin-top: 0;
 			}
-		#Hall:target .b-bullet:nth-child(2n) {
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(2n) {
 			-webkit-transform: rotate(-45deg) translate(2em, 1em);
 			   -moz-transform: rotate(-45deg) translate(2em, 1em);
 			     -o-transform: rotate(-45deg) translate(2em, 1em);
 			        transform: rotate(-45deg) translate(2em, 1em);
 			}
-		#Hall:target .b-bullet:nth-child(3n-2) {
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(3n-2) {
 			-webkit-transform: rotate(230deg);
 			   -moz-transform: rotate(230deg);
 			     -o-transform: rotate(230deg);
 			        transform: rotate(230deg);
 			}
-		#Hall:target .b-bullet:nth-child(1)  { margin-left: 100em; }
-		#Hall:target .b-bullet:nth-child(2)  { margin-left: 150em; }
-		#Hall:target .b-bullet:nth-child(3)  { margin-top:  100em; }
-		#Hall:target .b-bullet:nth-child(4)  { margin-top: -100em; }
-		#Hall:target .b-bullet:nth-child(5)  { margin-left:  90em; }
-		#Hall:target .b-bullet:nth-child(6)  { margin-left: -50em; }
-		#Hall:target .b-bullet:nth-child(7)  { margin-top:  100em; }
-		#Hall:target .b-bullet:nth-child(8)  { margin-left: 100em; }
-		#Hall:target .b-bullet:nth-child(9)  { margin-left:-100em; }
-		#Hall:target .b-bullet:nth-child(10) { margin-top:  200em; }
-		#Hall:target .b-bullet:nth-child(11) { margin-left: 100em; }
-		#Hall:target .b-bullet:nth-child(12) { margin-top:  300em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(1)  { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(2)  { margin-left: 150em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(3)  { margin-top:  100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(4)  { margin-top: -100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(5)  { margin-left:  90em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(6)  { margin-left: -50em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(7)  { margin-top:  100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(8)  { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(9)  { margin-left:-100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(10) { margin-top:  200em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(11) { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(12) { margin-top:  300em; }
 			
-		#Hall:target .b-shield {
+		#at_Hall:checked ~ #Hall .b-shield {
 			opacity: 1;
 			-webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
 			   -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
@@ -484,14 +490,14 @@
 			        box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
 			}
 		
-		#Hall:target .b-continue1 {
+		#at_Hall:checked ~ #Hall .b-continue1 {
 			left: 0 !important;
 			-webkit-transition: left 20s;
 			   -moz-transition: left 20s;
 			     -o-transition: left 20s;
 			        transition: left 20s;
 			}
-		#Hall2:target+#Hall .b-continue2 {
+		#at_Hall2:checked ~ #Hall .b-continue2 {
 			left: 0 !important;
 			-webkit-transition: left 6s;
 			   -moz-transition: left 6s;
@@ -499,7 +505,7 @@
 			        transition: left 6s;
 			}
 	
-		#Hall2:target+#Hall .b-bubble { margin-top: 200em; }
+		#at_Hall2:checked ~ #Hall .b-bubble { margin-top: 200em; }
 
 		</style>
 
@@ -562,11 +568,10 @@
 
 			</dialog>
 
-			<a href="#Hall2" class="b-continue b-continue1">→</a>
-			<a href="#Scene" class="b-continue b-continue2">→</a>
+			<label for="at_Hall2" class="b-continue b-continue1">→</label>
+			<label for="at_Scene" class="b-continue b-continue2">→</label>
 		</div>
 
-		<a class="b-choose-me b-choose-me_start" href="#Setup">Start</a>
 	</div>
 	
 	<!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter10205473 = new Ya.Metrika({id:10205473, enableAll: true, trackHash:true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/10205473" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --></body>
