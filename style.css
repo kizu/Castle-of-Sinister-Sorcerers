@@ -4,7 +4,8 @@
 #at_Entrance2:checked ~ #Entrance .b-bubble,
 #at_Hall2:checked     ~ #Hall     .b-bubble,
 #at_Entrance2:checked ~ #Entrance .b-continue1,
-#at_Hall2:checked     ~ #Hall     .b-continue1 {
+#at_Hall2:checked     ~ #Hall     .b-continue1,
+#at_Opera2:checked    ~ #Opera    .b-continue1 {
 	display: none !important;
 	}
 
@@ -13,6 +14,7 @@
 #at_Setup:checked ~ #Setup,
 #at_Entrance:checked ~ #Entrance,
 #at_Hall:checked ~ #Hall,
+#at_Opera:checked ~ #Opera,
 .b-scene_debug {
 	opacity: 1 !important;
 	visibility: visible !important;
@@ -57,6 +59,12 @@ BODY {
 		}
 	#resolutionBig:checked ~ .b-display {
 		font-size: 1.75em;
+		}
+	#languageRussian:checked ~ .b-display .b-lang__en {
+		display: none;
+		}
+	#languageRussian:checked ~ .b-display .b-lang:before {
+		content: attr(data-ru);
 		}
 
 /* Scene */
@@ -123,6 +131,8 @@ BODY {
 	#resolutionSmall:checked ~ .b-display .b-choose-me[for=resolutionSmall],
 	#resolutionMedium:checked ~ .b-display .b-choose-me[for=resolutionMedium],
 	#resolutionBig:checked ~ .b-display .b-choose-me[for=resolutionBig],
+	#languageRussian:checked ~ .b-display .b-choose-me[for=languageRussian],
+	#languageEnglish:checked ~ .b-display .b-choose-me[for=languageEnglish],
 	.b-choose-me:hover {
 		padding: .1em .4em;
 	
@@ -131,7 +141,6 @@ BODY {
 		color: #000;
 		background: #FFF;
 		}
-	.b-scene_extra,
 	.b-choose-me__control {
 		position: absolute !important;
 		position: fixed !important;
@@ -781,3 +790,435 @@ BODY {
 			        transition: left 6s ease;
 			}
 
+/* Somewhat altered and quirked http://leaverou.me/css3patterns/#bricks pattern */
+
+#Hall .b-human_hero {
+	bottom: 5em;
+	}
+
+#Hall .b-human_chrome {
+	left: 2em;
+	top: 4em;
+	}
+#Hall .b-human_safari {
+	left: 7em;
+	top: 5em;
+	}
+
+#Hall .b-frame_bg {
+	font-size: 2.1em;
+	background: #000;
+	background-image:
+	  -webkit-linear-gradient(115deg, #191008 .23em, transparent 0),
+	  -webkit-linear-gradient(294deg, #191008 .23em, transparent 0),
+	  -webkit-linear-gradient(115deg, #191008 .23em, transparent 0),
+	  -webkit-linear-gradient(295deg, #191008 .23em, transparent 0);
+	background-image:
+	     -moz-linear-gradient(115deg, #191008 .23em, transparent 0),
+	     -moz-linear-gradient(294deg, #191008 .23em, transparent 0),
+	     -moz-linear-gradient(115deg, #191008 .23em, transparent 0),
+	     -moz-linear-gradient(295deg, #191008 .23em, transparent 0);
+	background-image:
+	       -o-linear-gradient(115deg, #191008 .23em, transparent 0),
+	       -o-linear-gradient(294deg, #191008 .23em, transparent 0),
+	       -o-linear-gradient(115deg, #191008 .23em, transparent 0),
+	       -o-linear-gradient(295deg, #191008 .23em, transparent 0);
+	background-image:
+	          linear-gradient(115deg, #191008 .23em, transparent 0),
+	          linear-gradient(294deg, #191008 .23em, transparent 0),
+	          linear-gradient(115deg, #191008 .23em, transparent 0),
+	          linear-gradient(295deg, #191008 .23em, transparent 0);
+
+	background-size: .58em .58em;
+	background-position: 0 .02em, .04em .34em, .29em .3em, .34em .06em;
+	opacity: 0.7;
+	}
+	#Hall .b-floor {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		border-top: 3.5em solid #121917;
+		border-bottom: 2.5em solid #121917;
+		}
+	#Hall .b-stairs {
+		position: absolute;
+		right: 0;
+		bottom: 2em;
+		width: 9em;
+		height: 4.5em;
+		overflow: hidden;
+		}
+		#Hall .b-stairs:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5em;
+			border-left: 4.2em dashed transparent;
+			border-bottom: 4.2em solid #786954;
+			}
+		#Hall .b-stairs:before {
+			content: "";
+			position: absolute;
+			left: -0.9em;
+			top: 1.85em;
+			height: 0.3em;
+			width: 5.9em;
+			background-image:
+			  -webkit-linear-gradient( 45deg, #786954 25%, transparent 25%),
+			  -webkit-linear-gradient(-45deg, transparent 75%, #786954 75%);
+			background-image:
+			     -moz-linear-gradient( 45deg, #786954 25%, transparent 25%),
+			     -moz-linear-gradient(-45deg, transparent 75%, #786954 75%);
+			background-image:
+			       -o-linear-gradient( 45deg, #786954 25%, transparent 25%),
+			       -o-linear-gradient(-45deg, transparent 75%, #786954 75%);
+			background-image:
+			          linear-gradient( 45deg, #786954 25%, transparent 25%),
+			          linear-gradient(-45deg, transparent 75%, #786954 75%);
+			background-size: .5em .5em;
+			background-position: -0.25em 100%;
+			background-repeat: repeat-x;
+
+			-webkit-transform: rotate(-45deg);
+			   -moz-transform: rotate(-45deg);
+			     -o-transform: rotate(-45deg);
+			        transform: rotate(-45deg);
+
+			}
+		#Hall .b-portal {
+			position: absolute;
+			left: 29em;
+			bottom: 11.5em;
+
+			width: 0;
+			height: 10em;
+			border-right: 10em solid rgba(255,255,0,0);
+			opacity: 0;
+			background: rgba(255,255,0,0.7);
+			-webkit-border-radius: 5em;
+			   -moz-border-radius: 5em;
+			        border-radius: 5em;
+			-webkit-transform: scale(.2);
+			   -moz-transform: scale(.2);
+			     -o-transform: scale(.2);
+			        transform: scale(.2);
+			-webkit-transition: -webkit-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			   -moz-transition:    -moz-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			     -o-transition:      -o-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			        transition:         transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			}
+		#Hall .b-human-behavior {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			-webkit-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			   -moz-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			     -o-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			        transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			}
+		
+		#Hall .b-human_hero {
+			left: -4em;
+			-webkit-transition: left 4s linear, bottom .3s 2.3s;
+			   -moz-transition: left 4s linear, bottom .3s 2.3s;
+			     -o-transition: left 4s linear, bottom .3s 2.3s;
+			        transition: left 4s linear, bottom .3s 2.3s;
+			
+			}
+		#Hall .b-human_hero .b-human__hand {
+			-webkit-transition: -webkit-transform .5s 3s, left .5s 3s;
+			   -moz-transition:    -moz-transform .5s 3s, left .5s 3s;
+			     -o-transition:      -o-transform .5s 3s, left .5s 3s;
+			        transition:         transform .5s 3s, left .5s 3s;
+			}
+		#Hall .b-human_sorcerer .b-human__hand {
+			-webkit-transition: -webkit-transform .5s 4s, left .5s 4s;
+			   -moz-transition:    -moz-transform .5s 4s, left .5s 4s;
+			     -o-transition:      -o-transform .5s 4s, left .5s 4s;
+			        transition:         transform .5s 4s, left .5s 4s;
+			}
+		
+		/* Chrome */
+		.b-human_chrome {
+			background: #2689C9;
+			border-top-color: #F9DFA5;
+			border-bottom-color: #E7B400;
+			-webkit-transition: left 11s;
+			   -moz-transition: left 11s;
+			     -o-transition: left 11s;
+			        transition: left 11s;
+			}
+			.b-human_chrome:before {
+				border-color: #FC5750;
+				}
+			.b-human_chrome .b-human__cape {
+				background: #FEDD00;
+				-webkit-transition: -webkit-transform 1s 9s;
+				   -moz-transition:    -moz-transform 1s 9s;
+				     -o-transition:      -o-transform 1s 9s;
+				        transition:         transform 1s 9s;
+				}
+			.b-human_chrome .b-human__hand {
+				background: #29CB4D;
+				left: .3em;
+				-webkit-transform: rotate(70deg);
+				   -moz-transform: rotate(70deg);
+				     -o-transform: rotate(70deg);
+				        transform: rotate(70deg);
+				}
+				.b-human_chrome .b-human__hand:before {
+					background: #248B4D;
+					}
+		/* Safari */
+		.b-human_safari {
+			background: #2176B6;
+			border-top-color: #FDFEFF;
+			border-bottom-color: #7E8584;
+			-webkit-transition: left 11s;
+			   -moz-transition: left 11s;
+			     -o-transition: left 11s;
+			        transition: left 11s;
+			}
+			.b-human_safari:before {
+				border-color: #94CFE6;
+				}
+			.b-human_safari .b-human__cape {
+				background: #A7B5D5;
+				-webkit-transition: -webkit-transform 1s 9s;
+				   -moz-transition:    -moz-transform 1s 9s;
+				     -o-transition:      -o-transform 1s 9s;
+				        transition:         transform 1s 9s;
+				}
+			.b-human_safari .b-human__hand {
+				left: .3em;
+				background: #8ED9EF;
+				}
+			.b-human_safari .b-human__hand:before {
+				background: #CC3D02;
+				}
+		#Hall .b-bullets {
+			position: absolute;
+			bottom: 280em;
+			left: 280em;
+			width: 5em;
+			height: 6em;
+			margin-top: 19em;
+			-webkit-transform: rotate(-180deg);
+			   -moz-transform: rotate(-180deg);
+			     -o-transform: rotate(-180deg);
+			        transform: rotate(-180deg);
+			-webkit-transition: -webkit-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+			   -moz-transition:    -moz-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+			     -o-transition:      -o-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+			        transition:         transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+			
+			}
+			#Hall .b-bullet {
+				position: relative;
+				display: inline-block;
+				font-family: Georgia;
+				-webkit-transition: -webkit-transform 2s 4s, margin .5s 6s;
+				   -moz-transition:    -moz-transform 2s 4s, margin .5s 6s;
+				     -o-transition:      -o-transform 2s 4s, margin .5s 6s;
+				        transition:         transform 2s 4s, margin .5s 6s;
+				}
+			#Hall .b-bullet:nth-child(1):before  { content: "" }
+			#Hall .b-bullet:nth-child(2):before  { content: "l" }
+			#Hall .b-bullet:nth-child(3):before  { content: "o" }
+			#Hall .b-bullet:nth-child(4):before  { content: "" }
+			#Hall .b-bullet:nth-child(5):before  { content: "o" }
+			#Hall .b-bullet:nth-child(6):before  { content: "" }
+			#Hall .b-bullet:nth-child(7):before  { content: "G" }
+			#Hall .b-bullet:nth-child(8):before  { content: "" }
+			#Hall .b-bullet:nth-child(9):before  { content: "g" }
+			#Hall .b-bullet:nth-child(10):before { content: "" }
+			#Hall .b-bullet:nth-child(11):before { content: "" }
+			#Hall .b-bullet:nth-child(12):before { content: "e" }
+
+			#Hall .b-bullet:nth-child(3n) {
+				margin-left: 0.4em;
+				}
+			#Hall .b-bullet:nth-child(2n) {
+				-webkit-transform: rotate(45deg);
+				   -moz-transform: rotate(45deg);
+				     -o-transform: rotate(45deg);
+				        transform: rotate(45deg);
+				}
+			#Hall .b-bullet:nth-child(3n-2) {
+				top: -.5em;
+				-webkit-transform: rotate(-23deg);
+				   -moz-transform: rotate(-23deg);
+				     -o-transform: rotate(-23deg);
+				        transform: rotate(-23deg);
+				}
+			#Hall .b-bullet:nth-child(2n+1) {
+				top: .25em;
+				}
+			#Hall .b-shield {
+				position: absolute;
+				left: 0em;
+				bottom: 3em;
+				
+				height: 10em;
+				width: 10em;
+				opacity: 0;
+				-webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+				   -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+				     -o-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+				        box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+				
+				-webkit-border-radius: 10em;
+				   -moz-border-radius: 10em;
+				        border-radius: 10em;
+				
+				-webkit-transform: translateZ(0);
+				   -moz-transform: translateZ(0);
+				     -o-transform: translateZ(0);
+				        transform: translateZ(0);
+				
+				-webkit-transition: opacity .3s 5.7s, -webkit-box-shadow .3s 6.3s;
+				   -moz-transition: opacity .3s 5.7s,    -moz-box-shadow .3s 6.3s;
+				     -o-transition: opacity .3s 5.7s,      -o-box-shadow .3s 6.3s;
+				        transition: opacity .3s 5.7s,         box-shadow .3s 6.3s;
+				}
+			#Hall .b-bubble:nth-of-type(1) {
+				-webkit-transition: top 8s;
+				   -moz-transition: top 8s;
+				     -o-transition: top 8s;
+				        transition: top 8s;
+				}
+			#Hall .b-bubble:nth-of-type(2) {
+				-webkit-transition: top 10s;
+				   -moz-transition: top 10s;
+				     -o-transition: top 10s;
+				        transition: top 10s;
+				}
+			#Hall .b-bubble:nth-of-type(3) {
+				-webkit-transition: top 13s;
+				   -moz-transition: top 13s;
+				     -o-transition: top 13s;
+				        transition: top 13s;
+				}
+			#Hall .b-bubble:nth-of-type(4) {
+				-webkit-transition: top 15s;
+				   -moz-transition: top 15s;
+				     -o-transition: top 15s;
+				        transition: top 15s;
+				}
+			#Hall .b-bubble:nth-of-type(5) {
+				-webkit-transition: top 18s;
+				   -moz-transition: top 18s;
+				     -o-transition: top 18s;
+				        transition: top 18s;
+				}
+			
+		#at_Hall:checked ~ #Hall .b-portal {
+			opacity: 1;
+			background: rgba(255,255,0,0);
+			-webkit-transform: scale(1);
+			   -moz-transform: scale(1);
+			     -o-transform: scale(1);
+			        transform: scale(1);
+			}
+		#at_Hall:checked ~ #Hall .b-human_hero {
+			left: 8em;
+			bottom: 4.5em;
+			}
+		#at_Hall:checked ~ #Hall .b-human-behavior {
+			left: -4em;
+			bottom: .5em;
+			}
+		#at_Hall:checked ~ #Hall .b-human_hero .b-human__hand {
+			-webkit-transform: rotate(-80deg);
+			   -moz-transform: rotate(-80deg);
+			     -o-transform: rotate(-80deg);
+			        transform: rotate(-80deg);
+			}
+		#at_Hall:checked ~ #Hall .b-human_sorcerer .b-human__hand {
+			-webkit-transform: rotate(-380deg);
+			   -moz-transform: rotate(-380deg);
+			     -o-transform: rotate(-380deg);
+			        transform: rotate(-380deg);
+			}
+		#at_Hall:checked ~ #Hall .b-bullets {
+			bottom: 8em;
+			left: 4em;
+			-webkit-transform: rotate(-30deg);
+			   -moz-transform: rotate(-30deg);
+			     -o-transform: rotate(-30deg);
+			        transform: rotate(-30deg);
+			margin-top: 0;
+			}
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(2n) {
+			-webkit-transform: rotate(-45deg) translate(2em, 1em);
+			   -moz-transform: rotate(-45deg) translate(2em, 1em);
+			     -o-transform: rotate(-45deg) translate(2em, 1em);
+			        transform: rotate(-45deg) translate(2em, 1em);
+			}
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(3n-2) {
+			-webkit-transform: rotate(230deg);
+			   -moz-transform: rotate(230deg);
+			     -o-transform: rotate(230deg);
+			        transform: rotate(230deg);
+			}
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(1)  { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(2)  { margin-left: 150em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(3)  { margin-top:  100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(4)  { margin-top: -100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(5)  { margin-left:  90em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(6)  { margin-left: -50em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(7)  { margin-top:  100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(8)  { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(9)  { margin-left:-100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(10) { margin-top:  200em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(11) { margin-left: 100em; }
+		#at_Hall:checked ~ #Hall .b-bullet:nth-child(12) { margin-top:  300em; }
+			
+		#at_Hall:checked ~ #Hall .b-shield {
+			opacity: 1;
+			-webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+			   -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+			     -o-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+			        box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+			}
+		
+		#at_Hall:checked ~ #Hall .b-continue1 {
+			left: 0 !important;
+			-webkit-transition: left 20s;
+			   -moz-transition: left 20s;
+			     -o-transition: left 20s;
+			        transition: left 20s;
+			}
+		#at_Hall2:checked ~ #Hall .b-continue2 {
+			left: 0 !important;
+			-webkit-transition: left 6s;
+			   -moz-transition: left 6s;
+			     -o-transition: left 6s;
+			        transition: left 6s;
+			}
+
+		#at_Hall2:checked ~ #Hall .b-portal {
+			opacity: 0;
+			border-right: 10em solid rgba(255,255,0,0.7);
+			-webkit-transform: scale(.2);
+			   -moz-transform: scale(.2);
+			     -o-transform: scale(.2);
+			        transform: scale(.2);
+			}
+		#at_Hall2:checked ~ #Hall .b-human_sorcerer .b-human__hand {
+			-webkit-transition: -webkit-transform 2s, left 2s;
+			   -moz-transition:    -moz-transform 2s, left 2s;
+			     -o-transition:      -o-transform 2s, left 2s;
+			        transition:         transform 2s, left 2s;
+			-webkit-transform: rotate(-250deg);
+			   -moz-transform: rotate(-250deg);
+			     -o-transform: rotate(-250deg);
+			        transform: rotate(-250deg);
+			left: 0.25em;
+			}
+		#at_Hall2:checked ~ #Hall .b-human-behavior {
+			margin: 0 0 8.5em 38em;
+			}
