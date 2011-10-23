@@ -21,8 +21,8 @@
 		<input class="b-choose-me__control" type="checkbox" id="at_Start"     />
 		<input class="b-choose-me__control" type="checkbox" id="at_Entrance"  />
 		<input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
-		<input class="b-choose-me__control" type="checkbox" id="at_Hall"      />
-		<input class="b-choose-me__control" type="checkbox" id="at_Hall2"     />
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall"      checked="checked"/>
+		<input class="b-choose-me__control" type="checkbox" id="at_Hall2"     checked="checked"/>
 		<input class="b-choose-me__control" type="checkbox" id="at_Opera"     />
 		<input class="b-choose-me__control" type="checkbox" id="at_Opera2"    />
 
@@ -166,11 +166,259 @@
 
 
 		<style>
+#Opera {
+	background: #641F00;
+	}
+#Opera {
+	}
+
+#Opera .b-frame_bg {
+	border-bottom: 3em solid #9F1C07;
+	}
+	#Opera .b-frame_bg:before {
+		content: "";
+		position: absolute;
+		top: -2em;
+		left: -3em;
+		right: -3em;
+		border-top: 4em solid #FF9B00;
+		height: 12em;
+		-webkit-border-radius: 10em/8em;
+		   -moz-border-radius: 10em/8em;
+		        border-radius: 10em/8em;
+		}
+	
+	#Opera .b-curtain:before {
+		content: "";
+		position: absolute;
+		top: 1em;
+		left: 16.75em;
+
+		height: 6em;
+		width: 6em;
+		height: 6em;
+		border: solid #FFCF48;
+		border-width: 0 .25em .25em .25em;
 		
+		background: #B30000;
+
+		-webkit-border-radius: 0 0 3em 3em;
+		   -moz-border-radius: 0 0 3em 3em;
+		        border-radius: 0 0 3em 3em;
+		-webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		   -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		     -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		        box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		}
+	#Opera .b-curtain:after {
+		content: "";
+		position: absolute;
+		top: 4.5em;
+		left: 19.5em;
+
+		height: 6em;
+		width: 1em;
+		height: 2em;
+		
+		background: #FFCF48;
+
+		-webkit-border-radius: 1em/2em;
+		   -moz-border-radius: 1em/2em;
+		        border-radius: 1em/2em;
+		}
+	#Opera .b-curtain__top {
+		position: absolute;
+		top: -12em;
+		right: -9.5em;
+		width: 30em;
+		height: 20em;
+		border: .25em solid #FFCF48;
+		background: #B30000;
+		-webkit-border-radius: 15em/10em;
+		   -moz-border-radius: 15em/10em;
+		        border-radius: 15em/10em;
+		-webkit-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+		   -moz-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+		     -o-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+		        box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+		}
+		#Opera .b-curtain__top:first-of-type {
+			right: auto;
+			left: -9.5em;
+			}
+		
+	#Opera .b-curtain__top:before {
+		content: "";
+		
+		position: absolute;
+		top: 8em;
+		right: 5em;
+		width: 8em;
+		height: 14em;
+		
+		border: .25em solid #FFCF48;
+		background: #B30000;
+		-webkit-border-radius: 4em/7em;
+		   -moz-border-radius: 4em/7em;
+		        border-radius: 4em/7em;
+		-webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		   -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		     -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		        box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		}
+		#Opera .b-curtain__top:first-of-type:before {
+			right: auto;
+			left: 5em;
+			}
+	#Opera .b-curtain__top:after {
+		content: "";
+		
+		position: absolute;
+		top: 8em;
+		right: 6em;
+		width: 12em;
+		height: 10em;
+		
+		border: .25em solid #FFCF48;
+		background: #B30000;
+		-webkit-border-radius: 6em/5em;
+		   -moz-border-radius: 6em/5em;
+		        border-radius: 6em/5em;
+		-webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		   -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		     -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		        box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+		}
+		#Opera .b-curtain__top:first-of-type:after {
+			right: auto;
+			left: 6em;
+			}
+	#Opera .b-curtain__left,
+	#Opera .b-curtain__right {
+		position: relative;
+		z-index: -1;
+		float: left;
+		top: 0;
+		width: 2em;
+		
+		height: 26.5em;
+		background: #E90000;
+		border-bottom: .5em solid #D64D00;
+		-webkit-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+		   -moz-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+		     -o-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+		        box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+		
+		-webkit-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
+		   -moz-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
+		     -o-transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
+		        transition: width 4s 2s ease, margin 4s 2s ease, left 4s 2s ease;
+		
+		}
+	#Opera .b-curtain__left:nth-child(2n),
+	#Opera .b-curtain__right:nth-child(2n) {
+		z-index: -2;
+		}
+	#Opera .b-curtain__left:nth-child(2n-1),
+	#Opera .b-curtain__right:nth-child(2n-1) {
+		width: 2.2em;
+		}
+	#Opera .b-curtain__left:nth-child(3n-4),
+	#Opera .b-curtain__right:nth-child(3n-4) {
+		width: 1.7em;
+		}
+	#Opera .b-curtain__left:nth-child(3n),
+	#Opera .b-curtain__right:nth-child(3n) {
+		z-index: -1;
+		}
+	#Opera .b-curtain__left:nth-child(3n-2),
+	#Opera .b-curtain__right:nth-child(3n-2) {
+		-webkit-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+		   -moz-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+		     -o-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+		        box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+		}
+	#Opera .b-curtain__left:nth-child(5n-3),
+	#Opera .b-curtain__right:nth-child(5n-3) {
+		-webkit-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+		   -moz-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+		     -o-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+		        box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+		}
+	#Opera .b-curtain__right {
+		float: right;
+		}
+	#Opera .b-curtain__left:last-of-type {
+		margin-right: -2em;
+		}
+	#Opera .b-curtain__right:last-of-type {
+		margin-left: -2em;
+		}
+	
+	
+#Opera .b-human {
+	font-size: .5em;
+	}
+	#Opera .b-human_hero {
+		bottom: 6em;
+		left: 2em;
+		}
+	#Opera .b-human_hero {
+		bottom: 5.8em;
+		left: 2em;
+		}
+	#Opera .b-human_opera {
+		bottom: 4em;
+		font-size: .75em;
+		left: 44em;
+		z-index: -2;
+		}
+
+#at_Opera:checked ~ #Opera .b-curtain__left {
+	left: -3em;
+
+	margin-left: -.7em;
+	width: 1.5em;
+	}
+#at_Opera:checked ~ #Opera .b-curtain__right {
+	right: -3em;
+
+	width: 1.5em;
+	margin-right: -.7em;
+	}
+
+
+
 		</style>
 
 		<div class="b-scene" id="Opera">
+			<div class="b-frame b-curtain">
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<i class="b-curtain__left"></i>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<b class="b-curtain__right"></b>
+				<span class="b-curtain__top"></span>
+				<span class="b-curtain__top"></span>
+			</div>
 			<div class="b-frame b-frame_bg">
+				
 			</div>
 			
 			<div class="b-human b-human_hero">
@@ -178,6 +426,10 @@
 				<div class="b-human__hand"></div>
 			</div>
 
+			<div class="b-human b-human_sorcerer b-human_opera">
+				<div class="b-human__cape"></div>
+				<div class="b-human__hand"></div>
+			</div>
 
 			<label for="at_Opera2" class="b-continue b-continue1">→</label>
 			<label for="at_Ololo" class="b-continue b-continue2">→</label>
