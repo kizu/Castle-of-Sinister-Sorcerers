@@ -195,12 +195,13 @@
 			}
 		#Hall .b-portal {
 			position: absolute;
-			left: 79em;
+			left: 29em;
 			bottom: 11.5em;
 
-			width: 10em;
+			width: 0;
 			height: 10em;
-			overflow: hidden;
+			border-right: 10em solid rgba(255,255,0,0);
+			opacity: 0;
 			background: rgba(255,255,0,0.7);
 			-webkit-border-radius: 5em;
 			   -moz-border-radius: 5em;
@@ -209,20 +210,19 @@
 			   -moz-transform: scale(.2);
 			     -o-transform: scale(.2);
 			        transform: scale(.2);
-			-webkit-transition: -webkit-transform .7s 2s, background .7s 2s, left .01s 2s;
-			   -moz-transition:    -moz-transform .7s 2s, background .7s 2s, left .01s 2s;
-			     -o-transition:      -o-transform .7s 2s, background .7s 2s, left .01s 2s;
-			        transition:         transform .7s 2s, background .7s 2s, left .01s 2s;
-			
+			-webkit-transition: -webkit-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			   -moz-transition:    -moz-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			     -o-transition:      -o-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+			        transition:         transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
 			}
 		#Hall .b-human-behavior {
 			position: absolute;
 			left: 0;
 			bottom: 0;
-			-webkit-transition: left 3s 2s, bottom .3s 2s;
-			   -moz-transition: left 3s 2s, bottom .3s 2s;
-			     -o-transition: left 3s 2s, bottom .3s 2s;
-			        transition: left 3s 2s, bottom .3s 2s;
+			-webkit-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			   -moz-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			     -o-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+			        transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
 			}
 		
 		#Hall .b-human_hero {
@@ -273,7 +273,6 @@
 				   -moz-transform: rotate(70deg);
 				     -o-transform: rotate(70deg);
 				        transform: rotate(70deg);
-				
 				}
 				.b-human_chrome .b-human__hand:before {
 					background: #248B4D;
@@ -299,6 +298,7 @@
 				        transition:         transform 1s 9s;
 				}
 			.b-human_safari .b-human__hand {
+				left: .3em;
 				background: #8ED9EF;
 				}
 			.b-human_safari .b-human__hand:before {
@@ -421,7 +421,7 @@
 				}
 			
 		#at_Hall:checked ~ #Hall .b-portal {
-			left: 29em;
+			opacity: 1;
 			background: rgba(255,255,0,0);
 			-webkit-transform: scale(1);
 			   -moz-transform: scale(1);
@@ -504,9 +504,30 @@
 			     -o-transition: left 6s;
 			        transition: left 6s;
 			}
-	
-		#at_Hall2:checked ~ #Hall .b-bubble { margin-top: 200em; }
 
+		#at_Hall2:checked ~ #Hall .b-portal {
+			opacity: 0;
+			border-right: 10em solid rgba(255,255,0,0.7);
+			-webkit-transform: scale(.2);
+			   -moz-transform: scale(.2);
+			     -o-transform: scale(.2);
+			        transform: scale(.2);
+			}
+		#at_Hall2:checked ~ #Hall .b-human_sorcerer .b-human__hand {
+			-webkit-transition: -webkit-transform 2s, left 2s;
+			   -moz-transition:    -moz-transform 2s, left 2s;
+			     -o-transition:      -o-transform 2s, left 2s;
+			        transition:         transform 2s, left 2s;
+			-webkit-transform: rotate(-250deg);
+			   -moz-transform: rotate(-250deg);
+			     -o-transform: rotate(-250deg);
+			        transform: rotate(-250deg);
+			left: 0.25em;
+			}
+		#at_Hall2:checked ~ #Hall .b-human-behavior {
+			margin: 0 0 8.5em 38em;
+			}
+		
 		</style>
 
 		<div class="b-scene b-scene_extra" id="Hall2"></div>
@@ -569,7 +590,21 @@
 			</dialog>
 
 			<label for="at_Hall2" class="b-continue b-continue1">→</label>
-			<label for="at_Scene" class="b-continue b-continue2">→</label>
+			<label for="at_Opera" class="b-continue b-continue2">→</label>
+		</div>
+
+		<div class="b-scene" id="Opera">
+			<div class="b-frame b-frame_bg">
+			</div>
+			
+			<div class="b-human b-human_hero">
+				<div class="b-human__cape"></div>
+				<div class="b-human__hand"></div>
+			</div>
+
+
+			<label for="at_Opera2" class="b-continue b-continue1">→</label>
+			<label for="at_Ololo" class="b-continue b-continue2">→</label>
 		</div>
 
 	</div>

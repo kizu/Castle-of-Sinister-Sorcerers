@@ -1,5 +1,24 @@
 @-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
 
+/* Styles for regular changes */
+#at_Entrance2:checked ~ #Entrance .b-bubble,
+#at_Hall2:checked     ~ #Hall     .b-bubble,
+#at_Entrance2:checked ~ #Entrance .b-continue1,
+#at_Hall2:checked     ~ #Hall     .b-continue1 {
+	display: none !important;
+	}
+
+#Prepare,
+#at_Start:checked ~ #Start,
+#at_Setup:checked ~ #Setup,
+#at_Entrance:checked ~ #Entrance,
+#at_Hall:checked ~ #Hall,
+.b-scene_debug {
+	opacity: 1 !important;
+	visibility: visible !important;
+	}
+
+/* Basic Styles */
 HTML,
 BODY {
 	height: 100%;
@@ -86,16 +105,6 @@ BODY {
 			     -o-transform: scale(1,4);
 			        transform: scale(1,4);
 			}
-
-	#Prepare,
-	#at_Start:checked ~ #Start,
-	#at_Setup:checked ~ #Setup,
-	#at_Entrance:checked ~ #Entrance,
-	#at_Hall:checked ~ #Hall,
-	.b-scene_debug {
-		opacity: 1;
-		visibility: visible;
-		}
 
 /* Chooser */	
 .b-scene_interactive .b-choose-me {
@@ -297,7 +306,6 @@ BODY {
 		}
 
 #Entrance {
-	opacity: 1;
 	background: #000;
 	-webkit-transition: opacity 2s, visibility 2s, background 4s;
 	   -moz-transition: opacity 2s, visibility 2s, background 4s;
@@ -773,7 +781,3 @@ BODY {
 			        transition: left 6s ease;
 			}
 
-		#at_Entrance2:checked ~ #Entrance .b-bubble,
-		#at_Entrance2:checked ~ #Entrance .b-continue1 {
-			display: none;
-			}
