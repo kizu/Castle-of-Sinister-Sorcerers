@@ -235,6 +235,7 @@ BODY {
 		
 		width: 10em;
 		height: 15em;
+		border-top: .5em dotted #000000;
 		margin: -14em 0 0 -5em;
 
 		background: #EEE;
@@ -246,6 +247,62 @@ BODY {
 		        transition: top 8s, opacity 10s 3s;
 		
 		}
+		#Start .b-castle:before {
+			content: "";
+
+			position: absolute;
+			bottom: 0;
+			left: -10em;
+			right: -10em;
+
+			height: 4em;
+			
+			background: #AAA;
+			border-top: .5em dotted #000000;
+			}
+		#Start .b-castle:after {
+			content: "";
+			position: absolute;
+			top: 6em;
+			left: -1em;
+			
+			border-left: 6em solid transparent;
+			border-right: 6em solid transparent;
+			border-bottom: 5em solid #AAA;
+			}
+			#Start .b-castle__tower {
+				position: absolute;
+				top: -5em;
+				left: 2em;
+				width: 3em;
+				height: 2em;
+				border-top: 3em solid transparent;
+				border-left: 1.5em solid #CCC;
+				border-right: 1.5em solid #CCC;
+				}
+				#Start .b-castle__tower:before {
+					content: "";
+					top: -2em;
+					left: -5em;
+					right: -5em;
+					position: absolute;
+					border-top: 3em solid transparent;
+					border-left: 1.5em solid #EEE;
+					border-right: 1.5em solid #EEE;
+					height: 3em;
+					}
+				#Start .b-castle__tower:after {
+					content: "";
+					top: 3em;
+					left: -11em;
+					right: -11em;
+					position: absolute;
+					border-left: 1.5em solid #AAA;
+					border-right: 1.5em solid #AAA;
+					border-top: 2em solid transparent;
+					height: 8em;
+					}
+		
 	#Start .b-logo {
 		position: absolute;
 		top: -4em;
@@ -420,30 +477,6 @@ BODY {
 		   -moz-transition: left 4s 1s linear;
 		     -o-transition: left 4s 1s linear;
 		        transition: left 4s 1s linear;
-		}
-	#Entrance .b-clouds {
-		position: absolute;
-		right: 2em;
-		top: 12.45em;
-
-		width: 9em;
-		height: 4em;
-		background: #978DAF;
-		
-		-webkit-transition: right 120s linear;
-		   -moz-transition: right 120s linear;
-		     -o-transition: right 120s linear;
-		        transition: right 120s linear;
-		}
-	#Entrance .b-clouds:before {
-		content: "";
-		position: absolute;
-		right: -.5em;
-		bottom: .5em;
-		left: -.5em;
-		top: .5em;
-
-		background: inherit;
 		}
 	#Entrance .b-frame_mountains {
 		background: #8A86A9 repeat-x;
@@ -724,10 +757,6 @@ BODY {
 #at_Entrance2:checked ~ #Entrance, {
 	background: #30320B;
 	}
-	#Entrance .b-clouds,
-	#at_Entrance2:checked ~ #Entrance .b-clouds {
-		right: 60em;
-		}
 		#at_Entrance:checked ~ #Entrance .b-human_hero {
 			left: 9em;
 			}
