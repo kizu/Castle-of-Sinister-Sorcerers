@@ -1,24 +1,42 @@
 /* iOS specific styles */
-@media (orientation:portrait) {
-	HTML, BODY {
-		min-width: 40em;
-		min-height: 30em;
-		}
-}
-@media (orientation:landscape) {
-	HTML, BODY {
-		min-width: 40em;
-		min-height: 30em;
-		}
-}
 @media (max-device-width: 1024px) {
 	.b-settings_resolution {
 		display: none;
 		}
 	.b-display {
+		top: 0 !important;
+		margin: auto !important;
 		font-size: 1em !important;
 		}
 }
+
+/* Basic styles for non-retina iOS */
+@media (orientation:portrait) and (max-device-width: 1024px) {
+	HTML, BODY {
+		min-width: 40em;
+		min-height: 45em;
+		}
+}
+@media (orientation:landscape) and (max-device-width: 1024px) {
+	HTML, BODY {
+		min-width: 53.8em;
+		min-height: 30em;
+		}
+}
+/* Styles for Retina iOS */
+@media (orientation:portrait) and (-webkit-min-device-pixel-ratio:2) {
+	HTML, BODY {
+		min-width: 22.5em;
+		min-height: 25em;
+		}
+}
+@media (orientation:landscape) and (-webkit-min-device-pixel-ratio:2) {
+	HTML, BODY {
+		min-width: 28.6em;
+		min-height: 16em;
+		}
+}
+
 @media (-webkit-min-device-pixel-ratio:2) {
 	.b-display {
 		font-size: .5em !important;
