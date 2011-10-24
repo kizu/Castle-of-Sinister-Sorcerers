@@ -1,16 +1,34 @@
 /* iOS specific styles */
-@media (orientation:portrait) {
-	HTML, BODY {
-		min-width: 40em;
-		min-height: 54em;
+@media (max-device-width: 1024px) {
+	@media (orientation:portrait) {
+		HTML, BODY {
+			min-width: 40em;
+			min-height: 30em;
+			}
+	}
+	@media (orientation:landscape) {
+		HTML, BODY {
+			min-width: 40em;
+			min-height: 30em;
+			}
+	}
+	.b-settings_language {
+		display: none;
+		}
+	.b-display {
+		font-size: 1em !important;
 		}
 }
-@media (orientation:landscape) {
-	HTML, BODY {
-		min-width: 40em;
-		min-height: 30em;
+
+/* Settings */
+.b-settings {
+	margin: 0 0 3em;
+	}
+	.b-settings_header {
+		font-size: 1.5em;
+		margin: 1em 0;
 		}
-}
+
 
 /* Styles for regular changes */
 #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-bubble,
