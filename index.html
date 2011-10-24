@@ -21,7 +21,7 @@
 			<label class="b-choose-me b-choose-me_start" for="at_Setup">Start</label>
 		</div>
 		
-		<input class="b-choose-me__control" type="checkbox" id="at_Setup"     />
+		<input class="b-choose-me__control" type="checkbox" id="at_Setup" />
 		<div class="b-scene b-scene_interactive" id="Setup">
 			<h1><span class="b-lang" data-ru="Выберете разрешение"><span class="b-lang__en">Choose Resolution</span></span></h1>
 			<p><label class="b-choose-me" for="resolutionSmall"><span class="b-lang" data-ru="Маленькое"><span class="b-lang__en">Small</span></span></label></p>
@@ -34,7 +34,7 @@
 			<p class="b-confirm"><label class="b-choose-me" for="at_Start"><span class="b-lang" data-ru="Продолжить"><span class="b-lang__en">Continue</span></span></label></p>
 		</div>
 
-		<input class="b-choose-me__control" type="checkbox" id="at_Start"     />
+		<input class="b-choose-me__control" type="checkbox" id="at_Start" />
 		<div class="b-scene" id="Start">
 			<div class="b-frame b-frame_bg"></div>
 			<div class="b-frame b-frame_flash"></div>
@@ -52,7 +52,7 @@
 			<label for="at_Entrance" class="b-continue">→</label>
 		</div>
 
-		<input class="b-choose-me__control" type="checkbox" id="at_Entrance"  />
+		<input class="b-choose-me__control" type="checkbox" id="at_Entrance" />
 		<input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
 		<div class="b-scene" id="Entrance">
 			<div class="b-frame b-frame_mountains"></div>
@@ -161,7 +161,7 @@
 		</div>
 
 
-		<input class="b-choose-me__control" type="checkbox" id="at_Opera" checked />
+		<input class="b-choose-me__control" type="checkbox" id="at_Opera" />
 		<input class="b-choose-me__control" type="checkbox" id="at_Opera2"  />
 		<div class="b-scene" id="Opera">
 			<span class="b-boulder"></span>
@@ -235,33 +235,35 @@
 			<label for="at_Throne" class="b-continue b-continue2">→</label>
 		</div>
 
-		<style>
-#Throne {
-	opacity: 1; /* Again, Safari bug */
-	}
-
-		</style>
 		<input class="b-choose-me__control" type="checkbox" id="at_Throne" />
-		<input class="b-choose-me__control" type="checkbox" id="at_Throne2" />
 		<div class="b-scene" id="Throne">
 			<div class="b-frame b-frame_bg">
-				
+				<div class="b-columns"></div>
+				<div class="b-throne"></div>
+				<div class="b-human b-human_sorcerer b-human_ie">
+					<div class="b-human__cape"></div>
+					<div class="b-human__hand"></div>
+				</div>
+				<dialog>
+				  <dt class="b-bubble__person">Hero</dt>
+				  <dd class="b-bubble b-bubble_hero" style="top:2em;"><span class="b-lang" data-ru="Я так устал, ИЕ, послушай: У меня есть Ботинки Зума, Накидка Относительного Позиционирования и куча бутыльков Экспрешнов. Так что я даже не вгляну на тебя, возьми эти простейшие стили и забудь про красивые интернеты."><span class="b-lang__en">Ah, I'm so tired, IE, so listen to this: I have Boots of Zoom, Cape of Relative Positioning and a lot of Expression Potions. So, I won't even look at you, take this version with basic styles and forget about the beautiful interwebs.</span></span></dd>
+
+				  <dt class="b-bubble__person">IE</dt>
+				  <dd class="b-bubble b-bubble_sorcerer" style="top:15em;"><span class="b-lang" data-ru="Не-е-е-ет~!"><span class="b-lang__en">No-o-o-o~!…</span></span></dd>
+
+				</dialog>
 			</div>
 			
 			<div class="b-human b-human_hero">
 				<div class="b-human__cape"></div>
 				<div class="b-human__hand"></div>
 			</div>
-
-			<div class="b-human b-human_sorcerer b-human_ie">
-				<div class="b-human__cape"></div>
-				<div class="b-human__hand"></div>
+			
+			<div class="b-end">
+				<h1><span class="b-lang" data-ru="Конец!"><span class="b-lang__en">The end!</span></span></h1>
+				<p><span class="b-lang" data-ru="Это незаконченный прототип, жаль, не получилось выкроить больше времени для работы над ним. Ну и ладно."><span class="b-lang__en">This is a unfinished prototype, I wish I'd have more time to work on this. Whatever.</span></span></p>
 			</div>
-
-			<label for="at_Throne2" class="b-continue b-continue1">→</label>
-			<label for="at_End" class="b-continue b-continue2">→</label>
 		</div>
-
 
 	</div>
 	

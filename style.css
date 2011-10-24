@@ -6,8 +6,7 @@
 #at_Opera2:checked    ~ #Opera    .b-bubble,
 #at_Entrance2:checked ~ #Entrance .b-continue1,
 #at_Hall2:checked     ~ #Hall     .b-continue1,
-#at_Opera2:checked    ~ #Opera    .b-continue1,
-#at_Throne:checked    ~ #Throne    .b-continue1 {
+#at_Opera2:checked    ~ #Opera    .b-continue1 {
 	display: none !important;
 	}
 
@@ -665,7 +664,8 @@ BODY {
 			}
 			#at_Entrance:not(:checked) ~ #Entrance .b-bubble,
 			#at_Hall:not(:checked) ~ #Hall .b-bubble,
-			#at_Opera:not(:checked) ~ #Opera .b-bubble {
+			#at_Opera:not(:checked) ~ #Opera .b-bubble,
+			#at_Throne:not(:checked) ~ #Throne .b-bubble {
 				top: -2000em !important;
 				}
 			.b-bubble__person {
@@ -768,6 +768,9 @@ BODY {
 		
 		#at_Entrance2:checked ~ #Entrance .b-human_hero {
 			left: 45em;
+			}
+		#at_Entrance2:checked ~ #Entrance .b-human_firefox {
+			left: 75.75em;
 			}
 		#at_Entrance2:checked ~ #Entrance .b-ground__moat {
 			-webkit-transform: rotate(0) translate(0, 0);
@@ -1765,10 +1768,10 @@ BODY {
 
 #at_Opera2:checked ~ #Opera .b-continue2 {
 	left: 0 !important;
-	-webkit-transition: left 6s ease;
-	   -moz-transition: left 6s ease;
-	     -o-transition: left 6s ease;
-	        transition: left 6s ease;
+	-webkit-transition: left 3s ease;
+	   -moz-transition: left 3s ease;
+	     -o-transition: left 3s ease;
+	        transition: left 3s ease;
 	}
 #at_Opera2:checked ~ #Opera .b-human_hero {
 	top: 20em;
@@ -1780,4 +1783,164 @@ BODY {
 	   -moz-transform: translate(30em, 0);
 	     -o-transform: translate(30em, 0);
 	        transform: translate(30em, 0);
+	}
+
+#Throne {
+	background: #505A50;
+	opacity: 1; /* Again, Safari bug */
+	border-bottom: 3em solid #474F47;
+	height: auto;
+	bottom: 0;
+	}
+#Throne .b-frame_bg {
+	background: #505A50;
+	border-bottom: 3em solid #474F47;
+	border-left: 6em Double #474F47;
+	
+	-webkit-transition: margin 12s 14s linear;
+	   -moz-transition: margin 12s 14s linear;
+	     -o-transition: margin 12s 14s linear;
+	        transition: margin 12s 14s linear;
+	
+	}
+#Throne .b-columns {
+	position: absolute;
+	left: 33em;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	margin-left: 1em;
+	border-left: 6em Double #495249;
+	border-right: 6em Double #474F47;
+	}
+
+	#Throne .b-frame_bg:after,
+	#Throne .b-frame_bg:before,
+	#Throne .b-columns:after,
+	#Throne .b-columns:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 2em;
+		bottom: 0;
+		width: 2em;
+		border-left: 6em Double #495249;
+		border-right: 6em Double #474F47;
+		}
+		#Throne .b-columns:after,
+		#Throne .b-frame_bg:after {
+			left: 18em;
+			border-left-color: #424A41;
+			}
+		
+#Throne .b-human_hero {
+	left: -4em;
+	bottom: 0;
+	z-index: 1;
+	-webkit-transition: bottom 2s, left 2s, margin 12s 14s linear;
+	   -moz-transition: bottom 2s, left 2s, margin 12s 14s linear;
+	     -o-transition: bottom 2s, left 2s, margin 12s 14s linear;
+	        transition: bottom 2s, left 2s, margin 12s 14s linear;
+	}
+		
+#Throne .b-human_ie {
+	left: 26.5em;
+	bottom: .5em;
+	z-index: 1;
+	
+	background: #0378AB;
+	border-bottom-color: #75DAFB;
+	}
+#Throne .b-human_ie:before {
+	border-color: #E7F0F7;
+	}
+
+#Throne .b-human_ie .b-human__cape {
+	background: #EFB117;
+	}
+#Throne .b-human_ie .b-human__hand {
+	background: #024073;
+	}
+
+#Throne .b-throne {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 24em;
+
+	height: 5em;
+	width: 4em;
+	border: solid;
+	border-width: 4em 1em 1em;
+	border-color: transparent #35372F #21231F;
+
+	background: #3E4032;
+	}
+	#Throne .b-throne:before {
+		content: "";
+		position: absolute;
+		top: -6em;
+		left: 0;
+		height: 2em;
+		width: 4em;
+		border-bottom: 2em solid #40463B;
+		-webkit-border-radius: 4em;
+		   -moz-border-radius: 4em;
+		        border-radius: 4em;
+		background: #3E4032;
+		}
+#Throne .b-bubble {
+	z-index: 3;
+	width: 20em;
+	right: auto;
+	-webkit-transform: translateZ(0);
+	}
+
+
+#Throne .b-bubble_hero {
+	left: -8em;
+	}
+
+#Throne .b-bubble_sorcerer {
+	left: 31em;
+	width: auto;
+	right: auto;
+	}
+
+#at_Throne:checked ~ #Throne {
+	opacity: 0;
+	}
+
+#Throne .b-bubble:nth-of-type(1) {
+	-webkit-transition: top 3s;
+	   -moz-transition: top 3s;
+	     -o-transition: top 3s;
+	        transition: top 3s;
+	}
+#Throne .b-bubble:nth-of-type(2) {
+	-webkit-transition: top 10s;
+	   -moz-transition: top 10s;
+	     -o-transition: top 10s;
+	        transition: top 10s;
+	}
+
+#at_Throne:checked ~ #Throne .b-frame_bg {
+	margin-left: -39em;
+	}
+#at_Throne:checked ~ #Throne .b-human_hero {
+	bottom: 2em;
+	left: 4em;
+	margin-left: 40em;
+	}
+#Throne .b-end {
+	position: absolute;
+	top: -10em;
+	-webkit-transition: top 2s 26s;
+	   -moz-transition: top 2s 26s;
+	     -o-transition: top 2s 26s;
+	        transition: top 2s 26s;
+	
+	}
+#at_Throne:checked ~ #Throne .b-end {
+	top: 7em;
 	}
