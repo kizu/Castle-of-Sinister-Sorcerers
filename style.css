@@ -1,25 +1,29 @@
 /* iOS specific styles */
+@media (orientation:portrait) {
+	HTML, BODY {
+		min-width: 40em;
+		min-height: 30em;
+		}
+}
+@media (orientation:landscape) {
+	HTML, BODY {
+		min-width: 40em;
+		min-height: 30em;
+		}
+}
 @media (max-device-width: 1024px) {
-	@media (orientation:portrait) {
-		HTML, BODY {
-			min-width: 40em;
-			min-height: 30em;
-			}
-	}
-	@media (orientation:landscape) {
-		HTML, BODY {
-			min-width: 40em;
-			min-height: 30em;
-			}
-	}
-	.b-settings_language {
+	.b-settings_resulution {
 		display: none;
 		}
 	.b-display {
 		font-size: 1em !important;
 		}
 }
-
+@media (-webkit-min-device-pixel-ratio:2) {
+	.b-display {
+		font-size: .5em !important;
+		}
+}
 /* Settings */
 .b-settings {
 	margin: 0 0 3em;
