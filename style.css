@@ -1,3 +1,17 @@
+/* iOS specific styles */
+@media (orientation:portrait) {
+	HTML, BODY {
+		min-width: 40em;
+		min-height: 54em;
+		}
+}
+@media (orientation:landscape) {
+	HTML, BODY {
+		min-width: 40em;
+		min-height: 30em;
+		}
+}
+
 /* Styles for regular changes */
 #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-bubble,
 #Hall > #at_Hall2:checked + .b-scene-part2 .b-bubble,
