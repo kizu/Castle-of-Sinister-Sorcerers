@@ -150,11 +150,13 @@ BODY {
 		}
 	.b-choose-me_start {
 		position: relative;
-		top: 50%;
+		top: 2.3em;
 		font-size: 2em;
 		display: inline-block;
-		margin-top: -.75em;
 		}
+.b-start {
+	margin: 3em;
+	}
 
 .b-frame {
 	position: absolute;
