@@ -7,7 +7,7 @@ This is a test project made for one contest named [Browser Wars](http://webstand
 
 I hadn't enought time to finish it, so there are a lot of bugs and unfinished parts here and there, expecially in Opera. So, looks best in webkits and firefox.
 
-The highlights of code:
+The highlights of the code:
 
-* Only CSS used, no JavaScript (except for yandex' counter).
+* Only CSS used, no JavaScript (except for yandex' counter) or images.
 * Only CSS-transitions used, no CSS-animations. One of the goals I set to myself were to limit the uses of the animations and create them only by combining the transitions. A lot of bugs appeared in all browsers, I had a lot of things to learn from this.
