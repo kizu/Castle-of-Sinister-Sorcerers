@@ -52,12 +52,12 @@ BODY {
     height: 100%;
     padding: 0;
     margin: 0;
-    
+
     overflow: hidden;
 
     color: #FFF;
     background: #888;
-    
+
     font: 1em/1.5 Calibri, Monaco, monospace;
     }
 
@@ -66,12 +66,12 @@ BODY {
     position: relative;
     top: 50%;
     z-index: 9;
-    
+
     width: 40em;
     height: 30em;
     margin: -15em auto 0;
     text-align: center;
-    
+
     font-size: 1.25em;
 
     background: #555;
@@ -87,7 +87,8 @@ BODY {
     #resolutionBig:checked ~ .b-display {
         font-size: 1.75em;
         }
-    #languageRussian:checked ~ .b-display .b-lang__en {
+    #languageRussian:checked ~ .b-display .b-lang__en,
+    #languageEnglish:checked ~ .b-display .b-lang__ru {
         display: none;
         }
     #languageRussian:checked ~ .b-display .b-lang:before {
@@ -139,7 +140,7 @@ BODY {
         content: "";
         position: absolute;
         z-index: 9001;
-        
+
         top: -100px;
         bottom: -100px;
         left: -100px;
@@ -148,7 +149,7 @@ BODY {
         -webkit-border-radius: 50%/10%;
            -moz-border-radius: 50%/10%;
                 border-radius: 50%;
-        
+
         -webkit-transform: scale(3,1);
            -moz-transform: scale(3,1);
              -o-transform: scale(3,1);
@@ -180,10 +181,10 @@ BODY {
     }
 .b-choose-me {
     padding: .1em .4em;
-    
+
     cursor: pointer;
     text-decoration: none;
-    
+
     color: #FFF;
     background: #000;
     }
@@ -195,9 +196,9 @@ BODY {
     #languageEnglish:checked ~ .b-display .b-choose-me[for=languageEnglish],
     .b-choose-me:hover {
         padding: .1em .4em;
-    
+
         cursor: pointer;
-    
+
         color: #000;
         background: #FFF;
         }
@@ -252,10 +253,10 @@ BODY {
     position: absolute;
     bottom: 0;
     left: 0;
-    
+
     width: 1em;
     height: 2em;
-    
+
     border-top: 1em solid #E3B591;
     border-bottom: 1em solid #302006;
     background: #9E9E9C;
@@ -263,7 +264,7 @@ BODY {
     /* The helm */
     .b-human:before {
         content: "";
-        
+
         position: absolute;
         top: -1em;
         left: 0;
@@ -346,7 +347,6 @@ BODY {
            -moz-transform: rotate(-20deg);
              -o-transform: rotate(-20deg);
                 transform: rotate(-20deg);
-        
         }
     /* The hand's basic behavior */
     .b-human_sorcerer .b-human__hand {
@@ -491,7 +491,7 @@ BODY {
     position: absolute;
     top: 150%;
     left: 50%;
-    
+
     width: 10em;
     height: 15em;
     border-top: .5em dotted #000000;
@@ -499,12 +499,11 @@ BODY {
 
     background: #EEE;
     opacity: 0;
-    
+
     -webkit-transition: top 8s, opacity 10s 3s;
        -moz-transition: top 8s, opacity 10s 3s;
          -o-transition: top 8s, opacity 10s 3s;
             transition: top 8s, opacity 10s 3s;
-    
     }
     #Start .b-castle:before {
         content: "";
@@ -515,7 +514,7 @@ BODY {
         right: -10em;
 
         height: 4em;
-        
+
         background: #AAA;
         border-top: .5em dotted #000000;
         }
@@ -524,7 +523,7 @@ BODY {
         position: absolute;
         top: 6em;
         left: -1em;
-        
+
         border-left: 6em solid transparent;
         border-right: 6em solid transparent;
         border-bottom: 5em solid #AAA;
@@ -561,7 +560,7 @@ BODY {
                 border-top: 2em solid transparent;
                 height: 8em;
                 }
-    
+
 #Start .b-logo {
     position: absolute;
     top: -4em;
@@ -657,7 +656,7 @@ BODY {
         }
     #Entrance .b-ground:before {
         content: "";
-        
+
         position: absolute;
         bottom: 0;
         left: 40%;
@@ -682,7 +681,7 @@ BODY {
                -moz-transition:    -moz-transform .4s, margin .4s;
                  -o-transition:      -o-transform .4s, margin .4s;
                     transition:         transform .4s, margin .4s;
-            
+
             -webkit-transform: rotate(90deg);
                -moz-transform: rotate(90deg);
                  -o-transform: rotate(90deg);
@@ -692,7 +691,7 @@ BODY {
                  -o-transform-origin: 100% 0;
                     transform-origin: 100% 0;
             }
-        
+
     #Entrance .b-wall {
         position: absolute;
         right: 0;
@@ -731,7 +730,7 @@ BODY {
             width: 6em;
             height: 1.5em;
             }
-        
+
     #Entrance .b-human_hero {
         content: "";
         position: absolute;
@@ -803,7 +802,7 @@ BODY {
                   linear-gradient( 55deg, #72769B 200px, transparent 0),
                   linear-gradient(125deg, #72769B 200px, transparent 0);
         }
-            
+
     #Entrance .b-bubble:nth-of-type(1) {
         -webkit-transition: top 11s;
            -moz-transition: top 11s;
@@ -884,7 +883,7 @@ BODY {
     #Entrance > #at_Entrance2:checked + .b-scene-part2 {
         visibility: visible;
         }
-    
+
     #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-human_hero {
         left: 45em;
         }
@@ -897,7 +896,6 @@ BODY {
              -o-transform: rotate(0) translate(0, 0);
                 transform: rotate(0) translate(0, 0);
         margin-top: -.5em;
-        
         }
     #at_Entrance:checked + #Entrance .b-continue1 {
         left: 0 !important;
@@ -1009,7 +1007,6 @@ BODY {
                -moz-transform: rotate(-45deg);
                  -o-transform: rotate(-45deg);
                     transform: rotate(-45deg);
-
             }
     #Hall .b-portal {
         position: absolute;
@@ -1042,14 +1039,13 @@ BODY {
              -o-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
                 transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
         }
-    
+
     #Hall .b-human_hero {
         left: -4em;
         -webkit-transition: left 4s linear, bottom .3s 2.3s;
            -moz-transition: left 4s linear, bottom .3s 2.3s;
              -o-transition: left 4s linear, bottom .3s 2.3s;
                 transition: left 4s linear, bottom .3s 2.3s;
-        
         }
     #Hall .b-human_hero .b-human__hand {
         -webkit-transition: -webkit-transform .5s 3s, left .5s 3s;
@@ -1063,7 +1059,7 @@ BODY {
              -o-transition:      -o-transform .5s 4s, left .5s 4s;
                 transition:         transform .5s 4s, left .5s 4s;
         }
-    
+
     /* Chrome */
     .b-human_chrome {
         background: #2689C9;
@@ -1137,7 +1133,6 @@ BODY {
            -moz-transition:    -moz-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
              -o-transition:      -o-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
                 transition:         transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
-        
         }
         #Hall .b-bullet {
             position: relative;
@@ -1184,7 +1179,7 @@ BODY {
             position: absolute;
             left: 0em;
             bottom: 3em;
-            
+
             height: 10em;
             width: 10em;
             opacity: 0;
@@ -1192,16 +1187,16 @@ BODY {
                -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
                  -o-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
                     box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
-            
+
             -webkit-border-radius: 10em;
                -moz-border-radius: 10em;
                     border-radius: 10em;
-            
+
             -webkit-transform: translateZ(0);
                -moz-transform: translateZ(0);
                  -o-transform: translateZ(0);
                     transform: translateZ(0);
-            
+
             -webkit-transition: opacity .3s 5.7s, -webkit-box-shadow .3s 6.3s;
                -moz-transition: opacity .3s 5.7s,    -moz-box-shadow .3s 6.3s;
                  -o-transition: opacity .3s 5.7s,      -o-box-shadow .3s 6.3s;
@@ -1300,7 +1295,7 @@ BODY {
 #at_Hall:checked + #Hall .b-bullet:nth-child(10) { margin-top:  200em; }
 #at_Hall:checked + #Hall .b-bullet:nth-child(11) { margin-left: 100em; }
 #at_Hall:checked + #Hall .b-bullet:nth-child(12) { margin-top:  300em; }
-    
+
 #at_Hall:checked + #Hall .b-shield {
     opacity: 1;
     -webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
@@ -1379,7 +1374,7 @@ BODY {
         height: 6em;
         border: solid #FFCF48;
         border-width: 0 .25em .25em .25em;
-        
+
         background: #B30000;
 
         -webkit-border-radius: 0 0 3em 3em;
@@ -1399,7 +1394,7 @@ BODY {
         height: 6em;
         width: 1em;
         height: 2em;
-        
+
         background: #FFCF48;
 
         -webkit-border-radius: 1em/2em;
@@ -1427,16 +1422,16 @@ BODY {
             right: auto;
             left: -9.5em;
             }
-        
+
     #Opera .b-curtain__top:before {
         content: "";
-        
+
         position: absolute;
         top: 8em;
         right: 5em;
         width: 8em;
         height: 14em;
-        
+
         border: .25em solid #FFCF48;
         background: #B30000;
         -webkit-border-radius: 4em/7em;
@@ -1453,13 +1448,13 @@ BODY {
             }
     #Opera .b-curtain__top:after {
         content: "";
-        
+
         position: absolute;
         top: 8em;
         right: 6em;
         width: 12em;
         height: 10em;
-        
+
         border: .25em solid #FFCF48;
         background: #B30000;
         -webkit-border-radius: 6em/5em;
@@ -1481,7 +1476,7 @@ BODY {
         float: left;
         top: 0;
         width: 2em;
-        
+
         height: 26.5em;
         background: #E90000;
         border-bottom: .5em solid #D64D00;
@@ -1489,12 +1484,11 @@ BODY {
            -moz-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
              -o-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
                 box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
-        
+
         -webkit-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
            -moz-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
              -o-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
                 transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
-        
         }
     #Opera .b-curtain__left:nth-child(2n),
     #Opera .b-curtain__right:nth-child(2n) {
@@ -1535,7 +1529,7 @@ BODY {
     #Opera .b-curtain__right:last-of-type {
         margin-left: -20em;
         }
-    
+
     #Opera .b-human_hero {
         border-top: 1em solid #641F00;
         bottom: 3em;
@@ -1563,7 +1557,7 @@ BODY {
            -moz-transition: left 1s 4s, margin 3s 32s;
              -o-transition: left 1s 4s, margin 3s 32s;
                 transition: left 1s 4s, margin 3s 32s;
-        
+
         background: #F90000;
         }
     #Opera .b-human_opera:before {
@@ -1577,7 +1571,7 @@ BODY {
         height: 1.8em;
         width: .5em;
         background: inherit;
-        
+
         -webkit-border-radius: .5em/2em 0 0 0.5em;
            -moz-border-radius: .5em/2em 0 0 0.5em;
                 border-radius: .5em/2em 0 0 0.5em;
@@ -1586,12 +1580,12 @@ BODY {
              -o-transform: rotate(10deg);
                 transform: rotate(10deg);
         }
-    
+
     #Opera .b-human_opera .b-human__hand {
         z-index: 1;
         margin-left: -.2em;
         background: #D60000;
-        
+
         -webkit-transition: -webkit-transform .3s 5.5s;
            -moz-transition:    -moz-transform .3s 5.5s;
              -o-transition:      -o-transform .3s 5.5s;
@@ -1610,11 +1604,11 @@ BODY {
         height: 2em;
         opacity: 0;
         z-index: -2;
-        
+
         -webkit-border-radius: 2em 2em 0 0;
            -moz-border-radius: 2em 2em 0 0;
                 border-radius: 2em 2em 0 0;
-        
+
         -webkit-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
            -moz-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
              -o-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
@@ -1632,7 +1626,7 @@ BODY {
         position: absolute;
         left: 13em;
         top: 0;
-        
+
         width: 4em;
         height: 4em;
         background: #564F63;
@@ -1691,7 +1685,6 @@ BODY {
            -moz-transition:    -moz-transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
              -o-transition:      -o-transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
                 transition:         transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
-        
         }
         #Opera .b-ppsb:before {
             content: "";
@@ -1740,7 +1733,6 @@ BODY {
                -moz-transition: text-indent 3s 11s, color 3s 10s;
                  -o-transition: text-indent 3s 11s, color 3s 10s;
                     transition: text-indent 3s 11s, color 3s 10s;
-            
             }
         #Opera .b-ppsb__ray:before {
             content: "TROLOLOLOLO                      TROLOLOLOLO                    TROLOLOLOLO";
@@ -1750,7 +1742,7 @@ BODY {
         background: rgba(0,0,0,.7);
         -webkit-font-smoothing: subpixel-antialiased;
         }
-    
+
     #Opera .b-bubble:nth-of-type(1) {
         -webkit-transition: top 15s;
            -moz-transition: top 15s;
@@ -1884,7 +1876,7 @@ BODY {
     top: 20em;
     bottom: auto;
     z-index: -3;
-    
+
     border-top-width: 4em;
     -webkit-transform: translate(30em, 0);
        -moz-transform: translate(30em, 0);
@@ -1905,12 +1897,11 @@ BODY {
         background: #505A50;
         border-bottom: 3em solid #474F47;
         border-left: 6em Double #474F47;
-    
+
         -webkit-transition: margin 12s 14s linear;
            -moz-transition: margin 12s 14s linear;
              -o-transition: margin 12s 14s linear;
                 transition: margin 12s 14s linear;
-    
         }
     #Throne .b-columns {
         position: absolute;
@@ -1941,7 +1932,7 @@ BODY {
                 left: 18em;
                 border-left-color: #424A41;
                 }
-        
+
     #Throne .b-human_hero {
         left: -4em;
         bottom: 0;
@@ -1951,12 +1942,12 @@ BODY {
              -o-transition: bottom 2s, left 2s, margin 12s 14s linear;
                 transition: bottom 2s, left 2s, margin 12s 14s linear;
         }
-        
+
     #Throne .b-human_ie {
         left: 26.5em;
         bottom: .5em;
         z-index: 1;
-    
+
         background: #0378AB;
         border-bottom-color: #75DAFB;
         }
@@ -2004,7 +1995,6 @@ BODY {
         right: auto;
         -webkit-transform: translateZ(0);
         }
-
 
     #Throne .b-bubble_hero {
         left: -8em;
